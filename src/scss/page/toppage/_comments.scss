@@ -1,0 +1,72 @@
+/*=======================================================
+# [トップ] コメント
+=======================================================*/
+
+.comments {
+  margin-top: 60px;
+
+  &__lead {
+    margin-top: 32px;
+    @include fzrem(24);
+    text-align: center;
+  }
+
+  &__msg {
+    margin-top: 32px;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    background: transparent url(/img/toppage/pic6.jpg) no-repeat center center / cover;
+    color: $color-white;
+    position: relative;
+
+    &-psn {
+      @include fzrem(20);
+      strong {
+        @include fzrem(24);
+      }
+    }
+
+    &-txt {
+      width: 45%;
+      margin-top: 16px;
+      line-height: 1.5;
+      @include fzrem(14);
+
+      @include mq('sp') {
+        width: 100%;
+      }
+    }    
+  }
+  
+  &__box {
+    background: rgba(255,255,255,0.8);
+    margin-top: 16px;
+  }
+
+  &__body {
+    padding: 30px;
+  }
+
+  &_imgWrapper {
+    width: 100%;
+    margin: 0;
+    img {
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    text-align: right;
+    margin-top: 30px;
+    margin-right: 14px;
+    // position: absolute;
+    // bottom: 14px;
+    // right: 14px;
+
+    @include mq('sp') {
+      text-align: center;
+    }
+  }
+
+}

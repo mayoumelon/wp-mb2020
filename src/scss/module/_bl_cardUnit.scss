@@ -1,0 +1,25 @@
+.bl_cardUnit {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  width: 100%;
+
+  @include mq('sp') {
+    flex-direction: column;
+  }
+
+  &__col3 > div {
+
+    @include flexWidth(3, 30px);
+    @include mq('sp') {
+      width: 100%;
+    }
+  }
+
+  &__col2 > div {
+    @include flexWidth(2, 30px);
+    @include mq('sp') {
+      width: 100%;
+    }
+  }
+}

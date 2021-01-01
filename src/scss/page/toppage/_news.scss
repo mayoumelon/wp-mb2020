@@ -1,0 +1,19 @@
+/*=======================================================
+# [トップ] ニュース
+=======================================================*/
+.news {
+  margin-top: 60px;
+  &__inner {
+    position: relative;
+  }
+
+  &__btn {
+    position: absolute;
+    // top: 50%;
+    // left: 50%;
+    top: 0;
+    right: 30px;
+    // transform: translateY(50%);
+  }
+
+}

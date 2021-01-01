@@ -1,0 +1,19 @@
+.bl_confirm {
+
+  &_box {
+    background:rgba(255,255,255,0.29);
+    padding: 30px;
+    text-align: center;
+  }
+  
+  &_msg {
+    font-weight: bold;
+    @include fzrem(18);
+    line-height: 1.6666;
+    text-align: center;
+
+    @include mq('sp') {
+      @include fzrem(14);
+    }
+  }
+}

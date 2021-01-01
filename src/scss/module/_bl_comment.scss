@@ -1,0 +1,33 @@
+.bl_commentUnit {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mq('sp') {
+    flex-direction: column;
+  }
+}
+
+.bl_comment {
+  @include flexWidth(3, 30px);
+  margin-bottom: 30px;
+
+  @include mq('sp') {
+    width: 100%;
+  }
+  
+  &_nm {
+    text-align: center;
+    @include fzrem(22);
+    margin-bottom: 10px;
+  }
+
+  &_pos {
+    text-align: center;
+    @include fzrem(12);
+    margin-bottom: 15px;
+    color: $color-gray;
+  }
+  &_msg {
+    line-height: 1.5;
+  }
+}

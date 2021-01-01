@@ -1,0 +1,22 @@
+.bl_castNoImg {
+  @include flexWidth(3, 30px);
+  margin-bottom: 30px;
+  text-align: center;
+
+  &_pos {
+    margin-bottom: 10px;
+    color: $color-gray;
+  }
+  &_nm {
+    @include fzrem(22);
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  &_op {
+    margin-bottom: 20px;
+  }
+  &_msg {
+    line-height: 1.5;
+    text-align: left;
+  }
+}

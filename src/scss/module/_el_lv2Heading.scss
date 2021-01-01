@@ -1,0 +1,9 @@
+//sectionの共通タイトル設定
+.el_lv2Heading {
+  @include fzrem(43);
+  text-align: center;
+  text-transform: uppercase;
+  @include mq('sp') {
+    @include fzrem(26);
+  }
+}

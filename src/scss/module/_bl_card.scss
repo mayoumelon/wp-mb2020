@@ -1,0 +1,54 @@
+/*=======================================================
+# カードモジュール
+=======================================================*/
+.bl_card {
+  margin-top: 30px; 
+  background-color: $color-white;
+  // display: flex;
+  // flex-direction: column;
+
+
+  figure {
+    width: 100%;
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &_link {
+    // display: block;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: $color-black;
+
+    &:focus,
+    &:hover {
+      opacity: .75;
+    }
+  }
+
+  &_body {
+    padding: 14px 14px 24px;
+    time {
+      @include fzrem(12);
+    }
+    p {
+      @include fzrem(16);
+      margin-top: 10px;
+      font-weight: bold;
+      width: 100%;
+    } 
+  }
+
+  &__row {
+    flex-direction: row;
+
+    @include mq('sp') {
+      flex-direction: column;
+    }
+  }
+}

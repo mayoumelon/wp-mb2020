@@ -1,0 +1,8 @@
+//sectionの共通タイトル設定
+.el_lv3Heading {
+  @include fzrem(34);
+  text-align: center;
+  @include mq('sp') {
+    @include fzrem(18);
+  }
+}

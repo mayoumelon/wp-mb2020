@@ -1,0 +1,47 @@
+extends ./layout/_page1
+
+block append config
+  - var page = [['ホーム','/'],['キャスト','']]
+
+block content
+  // タイトル
+  h2.el_lv2Heading cast
+  
+  // コンテンツここから
+  .container
+    //- キャストメイン（トップと共通）
+    include ./include/_castMain
+
+    // キャスト（写真あり）一覧ここから
+    .bl_castUnit
+      - for (var x = 0; x < 4; x++)
+        .bl_cast
+          .bl_cast_imgWrapper
+            img(src="img/toppage/pic8.jpg", alt="")
+          .bl_cast_body
+            p.bl_cast_pos 出演
+            p.bl_cast_nm 白井さち子
+            p.bl_cast_op (バレエ、コンテンポラリーダンス)
+            p.bl_cast_msg
+              | 7歳よりクラシックバレエを始める。 82年より6年間橘バレエ学校に在籍。 牧阿佐美に師事。  
+              br 
+              | 日本女子体育短期大学舞踊コース卒。 在籍中、太田順造にパントマイムを師事。
+    // キャスト（写真あり）一覧ここまで
+
+    // キャスト（写真なし）一覧ここから
+    .bl_castUnit.hp_bgWhite
+      - for (var x = 0; x < 3; x++)
+        .bl_castNoImg
+          p.bl_cast_pos 作・演出・振付・構成
+          p.bl_cast_nm 小池博史
+          p.bl_cast_op 　
+        .bl_castNoImg
+          p.bl_cast_pos 出演
+          p.bl_cast_nm 白井さち子
+          p.bl_cast_op (バレエ、コンテンポラリーダンス)
+        .bl_castNoImg
+          p.bl_cast_pos 出演
+          p.bl_cast_nm 出演 小谷野哲郎
+          p.bl_cast_op (バリ舞踏)
+    // キャスト（写真なし）一覧ここまで
+  // コンテンツここまで

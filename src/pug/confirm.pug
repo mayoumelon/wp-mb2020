@@ -1,0 +1,25 @@
+extends ./layout/_page1
+
+block append config
+  - var page = [['ホーム','/'],['お問い合わせ','']]
+    //- ニュース
+    include ./mixin/_news
+
+block content
+  // タイトル
+  h2.el_lv2Heading inquiry
+  
+  // コンテンツここから
+  .container
+
+    // 確認ここから
+    .bl_confirm.hp_smTopSpace
+      .bl_confirm_box
+        p.bl_confirm_msg
+          | お問い合わせありがとうございました。
+          br
+          | メッセージは正常に送信されました。 
+    // 確認ここまで
+  
+    +newsSection('latest news')
+  // コンテンツここまで

@@ -1,0 +1,51 @@
+/*=======================================================
+# ボタンモジュール
+=======================================================*/
+.el_btn {
+  display: inline-block;
+  // width: 300px;
+  max-width: 100%;
+  padding: 12px;
+  background-color: $color-red;
+  border: 2px solid transparent;
+  // box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+  color: $color-white;
+  @include fzrem(14);
+  text-align: center;
+  text-decoration: none;
+  transition: .25s;
+
+  &:focus,
+  &:hover {
+    // background-color: #fff;
+    // border-color: currentColor;
+    // color: #e25c00;
+    background-color: $color-red-light;
+  }
+
+  &.el_btn__large {
+    // width: 340px;
+    // padding-top: 25px;
+    // padding-bottom: 25px;
+    // font-size: 1.375rem;
+    padding: 24px 30px;
+    @include mq('sp') {
+      padding: 16px 22px;
+    }
+  }
+
+  &.el_btn__border {
+    border: 3px solid $color-red;
+    background-color: $color-white;
+    color: $color-red;
+  }
+
+  &.el_btn__brown {
+    background-color: $color-brown;
+    &:focus,
+    &:hover {
+      background-color: $color-brown-light;
+    }
+  }
+}
+

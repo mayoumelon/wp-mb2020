@@ -1,0 +1,70 @@
+extends ./layout/_base
+
+block append config
+  include ./mixin/_news
+  include ./mixin/_breadcrumbs
+  - var page = [['ホーム','/'],['著名人コメント','']]
+
+block append header
+  //- ファーストビュー
+  include ./include/_fv
+
+block content
+
+  // イントロここから
+  section.intro
+    .intro__inner.container
+      // イントロボックスここから
+      .bl_intro_box.wow.fadeIn
+        h2.el_lv2Heading introduction
+        h3.el_lv3Heading なぜ今「マハーバーラタ」なのか？
+        // イントロテキストここから
+        .intro__txt
+          p
+            | 「平和」について改めて考えるストーリー全世界を司るものが神だとすれば、なぜ神であるクリシュナは、策を巡らしてまで、登場人物すべてを滅亡へと導いたのか？ それは、「戦い」そのものを廃絶しようとしたからだと考えられる。戦うことそのものへの虚しさ、「戦い」そのものの「悪」を問う物語が「マハーバーラタ」と言える。 平和とは？私たちには何ができるのか？根源的な「平和」を希求する物語。
+          p
+            | 現代社会を映し出す人間ドラマ対難民問題やヘイトスピーチ問題に見られるように、文化的背景が「異」なるものに対して非寛容になりつつある現代社会。 神の血を引きながらも、現代人同様に欲望や嫉妬によって争う登場人物たちが破滅していく様を描いた「マハーバーラタ」のストーリーは、人類が歩んできた争いの歴史の物語とも言い換えられる。 非寛容による悲劇の物語である「マハーバーラタ」を現代社会に重ね合わせつつ描くことで「寛容」の重要性を示す。
+        // イントロテキストここまで
+      // イントロボックスここまで
+  // イントロここまで
+
+  //- ニュース
+  +newsSection('news')
+
+  // ストーリーここから
+  section.story
+    .story__inner.container.wow.fadeIn
+      h2.el_lv2Heading story
+      // ストーリーテキストここから
+      .story__txt
+        p 
+          | マハー（偉大な）、バーラタ（バラタ族）、つまり「偉大なバラタ族」の物語。神々が人間界を作り出すところから始まり、バラタ族の中のクル家とパーンドゥ家という二つの部族間の対立を巡るストーリー。神の血を引く個性豊かな登場人物たちによる差別、対立、欲望、嫉妬など、生の苦しみが描かれ、最終的には一族が破滅していく。 世界的な文学作品古代ギリシャの「イーリアス」「オデュッセイア」と並ぶ世界三大叙事詩の一つに数えられており、「ラーマーヤナ」と双璧を成すインド二大叙事詩の一つ。原語はサンスクリット語であるが、全18巻、10万詩節を超えるその長さは聖書の約4倍と言われ、原典の日本語訳はいまだ完結していない。
+      // ストーリーテキストここまで
+      .story__btn
+        a.el_btn(href="#") もっと詳しく
+  // ストーリーここまで
+
+  // コメントここから
+  section.comments
+    .comments__inner.container.wow.fadeIn
+    // タイトル
+    h2.el_lv2Heading comments
+    // コンテンツここから
+    .container
+      //- コメントメイン（トップと共通）
+      include ./include/_commentMain
+    // コンテンツここまで
+  // コメントここまで
+
+  // キャストここから
+  section.cast
+    .cast__inner.container.wow.fadeIn
+      // タイトル
+      h2.el_lv2Heading cast
+      
+      // コンテンツここから
+      //- キャストメイン（トップと共通）
+      include ./include/_castMain
+      .cast__btn
+        a.el_btn.el_btn__border(href="#") もっと見る
+  // キャストここまで

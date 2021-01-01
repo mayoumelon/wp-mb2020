@@ -1,0 +1,20 @@
+mixin breadcrumbs(_list)
+  nav.bl_breadcrumb.container.hp_smSpace
+    ul.bl_breadcrumb_inner(itemscope itemtype="http://schema.org/BreadcrumbList")
+
+      each _item, _index in _list
+        - var _position = _index + 1
+
+        li.bl_breadcrumb_link(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+
+          if _position != _list.length
+
+            a(href=_item[1] itemprop="item") #{_item[0]}
+              //- span(itemprop="name") #{_item[0]}
+              //- meta(itemprop="position" content=_position)
+
+          else
+
+            a(href=_item[1] itemprop="item" aria-current="page") #{_item[0]}
+              //- span(itemprop="name") #{_item[0]}
+              //- meta(itemprop="position" content=_position)

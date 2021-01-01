@@ -1,0 +1,23 @@
+//*------------------*
+//*  cardの幅定義
+//*------------------*
+// $card-colにいくつ横並びするか設定
+// $card-marginにカードどうしのマージンを設定
+
+@mixin flexWidth($card-col, $card-margin,$op-col:0) {
+    width: calc(100% / #{$card-col} - #{$card-margin} * (#{$card-col} - 1) / #{$card-col} );
+    margin-right: $card-margin;
+
+    // &:nth-child()
+    
+    // 改行直前のCardは余白不要
+    @if $op-col > 0 {
+      &:nth-child(#{$card-col}n+#{$op-col}) {
+        margin-right: 0;
+      }
+    } @else {
+      &:nth-child(#{$card-col}n) {
+        margin-right: 0;
+      }
+    }
+}

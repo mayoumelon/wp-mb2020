@@ -1,0 +1,25 @@
+block config
+  include ../_config
+
+doctype html
+html(lang='ja' prefix='og: サイトURL#')
+  head
+    include ../include/_head
+
+  body
+    //- ヘッダ
+    include ../include/_header
+
+    //- 各ページの中身
+    main
+      block content
+
+      //- スケジュール（全ページ共通）
+      include ../include/_schedule
+
+    //- フッタ
+    include ../include/_footer
+
+    //- スクリプト
+    block script
+      include ../include/_script

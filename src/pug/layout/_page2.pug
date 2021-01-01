@@ -1,0 +1,33 @@
+block config
+  include ../_config
+  include ../mixin/_breadcrumbs
+
+doctype html
+html(lang="ja")
+  head
+    block head
+      include ../include/_head
+  body
+    // ヘッダーここから
+    header.header
+
+      //- ヘッダーの中身
+      block header
+        //- ナビゲーション
+        include ../include/_nav
+        
+    // ヘッダーここまで
+
+    // メインここから
+    main
+
+      //- 各ページごとの中身
+      block content
+
+    //- スケジュール（全ページ共通）
+    include ../include/_schedule
+
+    include ../include/_footer
+
+    block script
+      include ../include/_script

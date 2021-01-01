@@ -1,0 +1,26 @@
+extends ./layout/_page1
+
+block append config
+  - var page = [['ホーム','/'],['著名人コメント','']]
+
+block content
+  // タイトル
+  h2.el_lv2Heading comments
+  
+  // コンテンツここから
+  .container
+    //- コメントメイン（トップと共通）
+    include ./include/_commentMain
+
+    // コメント一覧ここから
+    .bl_commentUnit
+      - for (var x = 0; x < 12; x++)
+        .bl_comment
+          p.bl_comment_nm 今福龍太
+          p.bl_comment_pos 文化人類学者
+          p.bl_comment_msg
+            | 蝶は風を受けて飛ぶ。いやむしろ、風を切って飛ぶ。いやさらにいえば、みずから風を孕み風を生み出す。
+            br.hp_pc 
+            | 吹きすさび循環する大風のような物語。小池舞台はそんな物語を生成する未知なる蝶の飛翔だ。
+    // コメント一覧ここまで
+  // コンテンツここまで

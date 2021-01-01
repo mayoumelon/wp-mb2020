@@ -1,0 +1,46 @@
+/*=======================================================
+# キャストモジュール
+=======================================================*/
+.bl_castMain {
+  @include flexWidth(3, 30px);
+  text-align: center;
+
+  @include mq('sp') {
+    width: 100%;
+  }
+
+  &_imgWrapper {
+    height: 220px;
+    img {
+      border-radius: 50%;
+      // width: 80%;
+      height: 100%;
+    }
+  }
+
+  &_name {
+    margin-top: 38px;
+    p {
+      @include fzrem(16);
+      line-height: 2;
+    }
+    strong {
+      @include fzrem(18);
+    }
+  }
+
+  &_op {
+    color: $color-gray;
+  }
+
+  &_txt {
+    display: flex;
+    margin-top: 14px;
+    text-align: left;
+    @include fzrem(12);
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: $color-gray;
+    
+  }
+}

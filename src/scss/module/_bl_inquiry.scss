@@ -1,0 +1,19 @@
+.bl_inquiry {
+  background:rgba(255,255,255,0.29);
+    // background-color: rgba(255,255,255,0.4);
+    padding: 30px;
+    margin-top: 24px;
+    // width: 800px;
+    max-width: 80%;
+    margin: 0 auto;
+  
+  &_msg {
+    font-weight: bold;
+    @include fzrem(18);
+    line-height: 1.6666;
+
+    @include mq('sp') {
+      @include fzrem(14);
+    }
+  }
+}

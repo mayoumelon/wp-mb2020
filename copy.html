@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: サイトURL#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タイトル</title>
+  <meta name="description" content="">
+  <!-- ここからOGP-->
+  <meta propaty="og:url" content=" ページの URL">
+  <meta propaty="og:type" content=" ページの 種類">
+  <!-- website /blog 下層→article-->
+  <meta propaty="og:title" content=" ページの タイトル">
+  <meta propaty="og:description" content=" ページの デスクリプション">
+  <meta propaty="og:site_name" content=" サイト名">
+  <meta propaty="og:image" content=" サムネイル画像の URL">
+  <!-- OGPここまで-->
+  <!-- Font Awsome CDN-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+  <!-- 共通CSS-->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ここからヘッダー-->
+  <header class="header">
+    <div class="header__inner container">
+      <h1 class="header__ttl"></h1>
+      <!-- ナビゲーション-->
+      <nav class="nav">
+        <ul class="nav__lists">
+          <li class="nav__list -top"><a href="/">トップ</a></li>
+          <li class="nav__list -news"><a href="/news-archive">ニュース</a></li>
+          <li class="nav__list -story"><a href="/story">ストーリー</a></li>
+          <li class="nav__list -comments"><a href="/comments">著名人コメント</a></li>
+          <li class="nav__list -cast"><a href="/cast">キャスト</a></li>
+          <li class="nav__list -inquiry"><a href="/inquiry">問い合わせ</a></li>
+        </ul>
+      </nav>
+      <!-- レスポンシブmenuボタン-->
+      <div class="menu-btn"><span class="menu-btn__parts -top"></span><span class="menu-btn__parts -middle"></span><span class="menu-btn__parts -bottom"></span>
+      </div>
+      <!-- レスポンシブmenu-->
+      <nav class="menu">
+        <div class="menu__lists">
+          <li><a class="menu__list -top" href="/">トップ</a></li>
+          <li><a class="menu__list -news" href="/news-archive">ニュース</a></li>
+          <li><a class="menu__list -story" href="/story">ストーリー</a></li>
+          <li><a class="menu__list -comments" href="/comments">著名人コメント</a></li>
+          <li><a class="menu__list -cast" href="/cast">キャスト</a></li>
+          <li><a class="menu__list -inquiry" href="/inquiry">問い合わせ</a></li>
+        </div>
+      </nav>
+      <!-- ここまでナビゲーション-->
+    </div>
+  </header>
+  <!-- ここまでヘッダー-->
+  <main>
+    <div class="fv-sm py">
+      <div class="fv-sm__inner container">
+        <div class="fv-sm__ttl">
+          <h1 class="fv-sm__main"><img src="/img/toppage/text1.png" alt=""></h1>
+          <div class="fv-sm__sub"><img src="/img/toppage/text2.png" alt=""></div>
+        </div>
+        <div class="fv-sm__btn"><a class="el_btn" href="#">チケット予約サイトへ</a></div>
+      </div>
+    </div>
+    <nav class="bl_breadcrumb container hp_smSpace">
+      <ul class="bl_breadcrumb_inner" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+        <li class="bl_breadcrumb_link" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item">ホーム</a>
+        </li>
+        <li class="bl_breadcrumb_link" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" aria-current="page">cast</a>
+        </li>
+      </ul>
+    </nav>
+    <p style="height:30px; text-align:center;margin-top:30px;font-size:30px;color:green"> ここに中身をつくるよ！</p>
+    <!-- ここからスケジュール-->
+    <section class="schedule">
+      <div class="bl_schedule container">
+        <div class="bl_schedule_box">
+          <h2 class="el_lv2Heading">schedule</h2>
+          <ul class="bl_schedule_items">
+            <li class="bl_schedule_item">
+              <p>
+                <time datetime="2020-07-04">2020.07.04</time>
+              </p>
+              <P>
+                <time datetime="17:00">17:00</time>開演
+              </P>
+              <p>中野ZERO大ホール</p>
+              <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
+            </li>
+            <li class="bl_schedule_item">
+              <p>
+                <time datetime="2020-07-05">2020.07.05</time>
+              </p>
+              <P>
+                <time datetime="17:00">17:00</time>開演
+              </P>
+              <p>中野ZERO大ホール</p>
+              <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
+            </li>
+            <li class="bl_schedule_item">
+              <p>
+                <time datetime="2020-07-06">2020.07.06</time>
+              </p>
+              <P>
+                <time datetime="17:00">17:00</time>開演
+              </P>
+              <p>中野ZERO大ホール</p>
+              <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
+            </li>
+            <li class="bl_schedule_item">
+              <p>
+                <time datetime="2020-07-07">2020.07.07</time>
+              </p>
+              <P>
+                <time datetime="17:00">17:00</time>開演
+              </P>
+              <p>中野ZERO大ホール</p>
+              <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- ここまでスケジュール-->
+  </main>
+  <!-- ここからフッタ-->
+  <footer class="ly_footer">
+    <div class="ly_footer_inner container"><small class="el_footerCopyright">Copyright © 2019 完全版マハーバーラタ All Rights Reserved.</small></div>
+  </footer>
+  <!-- ここまでフッタ-->
+  <!-- jQuery読み込み-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

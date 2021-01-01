@@ -1,0 +1,14 @@
+/*=======================================================
+# キャストユニットモジュール
+=======================================================*/
+.bl_castUnit {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 80px;
+  padding-bottom: 40px;
+
+  @include mq('sp') {
+    flex-direction: column;
+  }
+}

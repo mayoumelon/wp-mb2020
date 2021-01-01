@@ -1,0 +1,50 @@
+/*=======================================================
+# ページャー（大）モジュール
+=======================================================*/
+.bl_pageNavi {
+
+  &_inner {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      width: 45%;
+    }
+  }
+
+  &_link {
+    display: flex;
+    text-decoration: none;
+    color: $color-black;
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+  }
+
+  &_date {
+    @include fzrem(12);
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  &_ttl {
+    @include fzrem(14);
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  .fas {
+    font-size: 32px;
+    margin-top: 10px;
+  }
+
+  .fa-chevron-circle-left {
+    margin-right: 15px;
+  }
+
+  .fa-chevron-circle-right {
+    margin-left: 15px;
+  }
+}

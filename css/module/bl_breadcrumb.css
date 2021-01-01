@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/*=======================================================
+# パンくずリストモジュール
+=======================================================*/
+.bl_breadcrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: auto;
+}
+
+.bl_breadcrumb_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.bl_breadcrumb_inner > *:last-child {
+  margin-right: 0;
+}
+
+.bl_breadcrumb_inner > li {
+  margin-right: 15px;
+}
+
+.bl_breadcrumb_link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bl_breadcrumb_link + .bl_breadcrumb_link::before {
+  content: ">";
+  margin-right: 10px;
+}
+
+/*# sourceMappingURL=../maps/module/bl_breadcrumb.css.map */

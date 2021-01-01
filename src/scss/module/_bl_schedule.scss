@@ -1,0 +1,88 @@
+/*=======================================================
+# スケジュールモジュール
+=======================================================*/
+.bl_schedule {  
+  &_box {
+    background:rgba(255,255,255,0.29);
+    // background-color: rgba(255,255,255,0.4);
+    padding: 30px 30px 60px;
+    text-align: center;
+  }
+
+  &_items {
+    margin-top: 30px;
+  }
+
+  &_item {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+
+    @include mq('sp') {
+      flex-direction: column;  
+    }
+
+    p {
+      @include fzrem(20);
+      font-weight: bold;
+
+      @include mq('sp') {
+        @include fzrem(14);
+      }
+
+      a {
+        color: $color-black;
+        &:focus,
+        &:hover  {
+          opacity: .75;
+        }
+      }
+    }
+    p + p {
+      margin-left: 30px;
+      @include mq('sp') {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  &_detail {
+    display: flex;
+    justify-content: center;
+    
+    & + & {
+      margin-left: 30px;
+      @include mq('sp') {
+        margin-left: 0;
+        margin-top: 6px;
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    a + a {
+      margin-left: 30px;
+    }
+
+    @include mq('sp') {
+      flex-direction: column;
+    }
+
+    &_inner {
+      & + & {
+        margin-left: 30px;
+        @include mq('sp') {
+          margin-left: 0;
+          margin-top: 30px;
+        }
+      } 
+    }
+
+  }
+
+}

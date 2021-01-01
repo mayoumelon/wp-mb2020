@@ -1,0 +1,47 @@
+/*=======================================================
+# ページャーモジュール
+=======================================================*/
+.bl_pager {
+  margin-top: 30px;
+  display: flex;
+  overflow-x: auto;
+  
+  &_inner {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+
+    & > *:last-child {
+      margin-right: 0;
+    }
+
+    & > li {
+      margin-right: 15px;
+    }
+  }
+
+  &_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 2px solid $color-pager;
+    color: $color-pager;
+    text-decoration: none;
+    transition: .25s;
+
+    &:focus,
+    &:hover {
+      background-color: $color-pager;
+      color: $color-yellow;
+      opacity: .75;
+    }
+
+    &.is_active {
+      background-color: $color-pager;
+      color: $color-yellow;
+      pointer-events: none;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+//*------------------*
+//*  base(共通)
+//*------------------*
+body {
+  @include fzrem(10);
+  // letter-spacing: 0.5em;
+  color: $color-black;
+  font-family: $font-main;
+
+  // 基本背景（黄色）＊固定にする
+  background-image: url(/img/bg.jpg);
+  background-attachment: fixed;
+}
+img {
+  // width: 100%;
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+//sectionの共通inner設定
+.section__inner {
+  margin: 0 auto;
+  padding: 0 4vw;
+}
+
+.py {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+// 背景画像
+.bg-cmn {
+  // width: 100%;
+  // height: 100%;
+  // background-image: url(/img/bg.jpg);
+}
+
+// コンテナ
+.container {
+  width: 980px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px; 
+}

@@ -1,0 +1,69 @@
+-
+  var scheduleList = [
+    {
+      yy:'2020',
+      mm: '07',
+      dd: '04',
+      time: '17:00',
+      location: '中野ZERO大ホール',
+      url: '#',
+    },
+    {
+      yy:'2020',
+      mm: '07',
+      dd: '05',
+      time: '17:00',
+      location: '中野ZERO大ホール',
+      url: '#',
+    },
+    {
+      yy:'2020',
+      mm: '07',
+      dd: '06',
+      time: '17:00',
+      location: '中野ZERO大ホール',
+      url: '#',
+    },
+    {
+      yy:'2020',
+      mm: '07',
+      dd: '07',
+      time: '17:00',
+      location: '中野ZERO大ホール',
+      url: '#',
+    },
+  ]
+
+// ここからスケジュール
+section.schedule
+  .bl_schedule.container
+    // スケジュール一覧ここから
+    .bl_schedule_box
+      h2.el_lv2Heading.wow.fadeIn schedule
+      ul.bl_schedule_items.wow.fadeIn
+        - for (var x = 0; x < scheduleList.length; x++)
+          li.bl_schedule_item
+
+            .bl_schedule_detail
+              //- 日にち
+              p
+                time(datetime=scheduleList[x]['yy']+'-'+scheduleList[x]['mm']+'-'+scheduleList[x]['dd']) #{scheduleList[x]['yy']}.#{scheduleList[x]['mm']}.#{scheduleList[x]['dd']}
+              //- 時間
+              P 
+                time(datetime=scheduleList[x]['time']) #{scheduleList[x]['time']}
+                | 開演
+            .bl_schedule_detail
+              //- 場所
+              p #{scheduleList[x]['location']}
+            .bl_schedule_detail
+              //- リンク
+              p: a(rel='noopener noreferer' target='_blank' href=scheduleList[x]['url']) チケット予約受付中
+    // スケジュール一覧ここまで
+    // スケジュールボタンここから
+    .bl_schedule__btn.wow.fadeIn
+      .bl_schedule__btn_inner
+        a.el_btn.el_btn__large.el_btn__brown お問い合わせはこちら
+      .bl_schedule__btn_inner
+        a.el_btn.el_btn__large チケット予約サイトへ
+    // スケジュールボタンここまで
+// ここまでスケジュール

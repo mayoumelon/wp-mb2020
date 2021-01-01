@@ -1,0 +1,18 @@
+mixin castItem(_list)
+
+  .bl_castMainUnit.hp_smTopSpace
+
+    each _item, _index in _list
+      - var _position = _index + 1
+
+      .bl_castMain
+          .bl_castMain_imgWrapper
+            img(src=_item.img, alt="")
+          .bl_castMain_name
+            p #{_item.pos}
+              br
+              strong #{_item.nm}
+            small.bl_castMain_op #{_item.op}
+          .bl_castMain_txt
+            p 
+              | #{_item.msg}

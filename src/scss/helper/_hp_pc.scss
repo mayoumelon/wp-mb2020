@@ -1,0 +1,6 @@
+// PCのみ表示
+.hp_pc {
+  @include mq('sp') {
+    display: none;
+  }
+}

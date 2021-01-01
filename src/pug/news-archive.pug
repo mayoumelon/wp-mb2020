@@ -1,0 +1,36 @@
+extends ./layout/_page1
+
+block append config
+  - var page = [['ホーム','/'],['news','']]
+  - var img1 = ['/img/toppage/pic2.jpg','/img/toppage/pic3.jpg','/img/toppage/pic4.jpg','/img/toppage/pic2.jpg','/img/toppage/pic3.jpg','/img/toppage/pic4.jpg']
+
+block content
+  // タイトル
+  h2.el_lv2Heading news
+  
+  // コンテンツここから
+  .container.wow.fadeIn
+
+    // ニュースここから
+    .bl_cardUnit.bl_cardUnit__col3
+        - for (var x = 0; x < 6; x++)
+          .bl_card
+            a.bl_card_link(href="")
+              figure.bl_card_imgWrapper
+                img(src=img1[x], alt="")
+              .bl_card_body
+                time(datetime='2019-09-30') 2019.09.30
+                p ニュースのタイトルが入ります。ニュースのタイトルが入ります。
+    // ニュースここまで
+    // ページネーションここから
+    nav.bl_pager
+      ul.bl_pager_inner
+        li
+          span.bl_pager_link.is_active 1
+        li
+          a.bl_pager_link(href="#") 2
+        li
+          a.bl_pager_link(href="#")
+            i.fas.fa-angle-right
+    // ページネーションここまで
+  // コンテンツここまで

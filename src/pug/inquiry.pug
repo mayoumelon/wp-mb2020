@@ -1,0 +1,45 @@
+extends ./layout/_page1
+
+block append config
+  - var page = [['ホーム','/'],['お問い合わせ','']]
+
+block content
+  // タイトル
+  h2.el_lv2Heading inquiry
+  
+  // コンテンツここから
+  .container
+
+    // お問い合わせフォームここから
+    .bl_inquiry.hp_smTopSpace
+      p.bl_inquiry_msg
+        | 小池博史ブリッジプロジェクトにご興味を持っていただきまして、ありがとうございます。
+        br
+        | 公演に関するお問い合わせ、公演・ワークショップのご依頼など、 
+        br.hp_pc
+        | お電話（03-3385-2066）か、下記フォームよりお気軽にお問い合わせください。
+      .el_form.hp_smTopSpace
+        form(action="", method="post")
+          dl.el_form_controls
+            .el_form_control
+              dt
+                label(for="name") お名前
+              dd
+                input#name.el_form_input(type='text' name='text' placeholder='')
+            .el_form_control
+              dt
+                label(for="tel") 電話番号
+              dd
+                input#tel.el_form_input(type='tel' name='tel' placeholder='')
+            .el_form_control
+              dt
+                label(for="email") メールアドレス
+              dd
+                input#email.el_form_input(type='email' name='email' placeholder='')
+            .el_form_control
+              dt
+                label(for="inquiry_msg") 内容
+              dd
+                textarea#inquiry_msg.el_form_textarea(ame='text' placeholder='')
+    // お問い合わせフォームここまで
+  // コンテンツここまで

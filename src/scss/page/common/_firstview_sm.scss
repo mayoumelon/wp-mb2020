@@ -1,0 +1,72 @@
+/*=======================================================
+# [トップ] ファーストビュー
+=======================================================*/
+.fv-sm {
+  width: 100%;
+  height: 100%;
+  background: transparent url(/img/common/pic10.jpg) no-repeat center center / cover;
+  &__inner {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: relative;
+  }
+  
+  &__ttl {
+    display: flex;
+    justify-content: space-between;
+
+    // @include mq('sp') {
+    //   flex-direction: column;
+    // }
+  }
+  
+  &__main {
+    width: 55%;
+
+    // @include mq('sp') {
+    //   width: 100%;
+    // }
+  }
+
+  &__sub {
+    width: 30%;
+    // @include mq('sp') {
+    //   width: 100%;
+    // }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__date {
+    text-align: center;
+    width: 40%;
+    @include mq('sp') {
+      width: 100%;
+    }
+  }
+
+  &__lead  {
+    width: 36%;
+    @include mq('sp') {
+      width: 100%;
+      margin-top: 30px;
+    }
+    p {
+      @include fzrem(14);
+      color: $color-white;
+      line-height: 1.5714;
+    }
+  }
+
+  .fv-sm__btn {
+    position: absolute;
+    // top: 50%;
+    // left: 50%;
+    bottom: 0;
+    right: 30px;
+    transform: translateY(50%);
+  }
+}
+

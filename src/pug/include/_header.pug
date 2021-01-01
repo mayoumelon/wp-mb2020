@@ -1,0 +1,60 @@
+// ここからヘッダー
+header.header
+  .header__inner.container
+    h1(class='header__ttl')
+    // ナビゲーション
+    nav.nav
+      ul.nav__lists
+        -
+          var pages = [
+            {
+              pageName: 'トップ',
+              pageDir: '',
+              pageCls: '-top'
+            },
+            {
+              pageName: 'ニュース',
+              pageDir: 'news-archive',
+              pageCls: '-news'
+            },
+            {
+              pageName: 'ストーリー',
+              pageDir: 'story',
+              pageCls: '-story'
+            },
+            {
+              pageName: '著名人コメント',
+              pageDir: 'comments',
+              pageCls: '-comments'
+            },
+            {
+              pageName: 'キャスト',
+              pageDir: 'cast',
+              pageCls: '-cast'
+            },
+            {
+              pageName: '問い合わせ',
+              pageDir: 'inquiry',
+              pageCls: '-inquiry'
+            },
+          ];
+        //- each item in list
+        //-   li item #{item}
+        - for (var x = 0; x < pages.length; x++)
+          li(class='nav__list '+pages[x]['pageCls']): a(href='/'+pages[x]['pageDir']) #{pages[x]['pageName']}
+
+    // レスポンシブmenuボタン
+    .menu-btn
+      - var btn = ['-top', '-middle', '-bottom']
+      - for (var x = 0; x < btn.length; x++)
+        span(class='menu-btn__parts '+btn[x])
+    
+    // レスポンシブmenu
+    nav.menu
+      ul.menu__lists
+        - for (var x = 0; x < pages.length; x++)
+          li.menu__list
+            a(class='menu__link '+pages[x]['pageCls'] href='/'+pages[x]['pageDir']) #{pages[x]['pageName']}
+    // ここまでナビゲーション
+
+// ここまでヘッダー

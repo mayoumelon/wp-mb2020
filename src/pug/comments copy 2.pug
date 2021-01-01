@@ -1,0 +1,9 @@
+extends ./layout/_page1
+
+block append config
+  - var page = [['ホーム','/'],['comments','']]
+
+block content
+  +breadcrumbs(page)
+  p(style='height:30px; text-align:center;margin-top:30px;font-size:30px;color:green') 
+    | ここに中身をつくるよ！
