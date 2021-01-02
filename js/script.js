@@ -1,3 +1,5 @@
+new WOW().init();
+
 $(function () {
   //ハンバーガーメニュー
   $(".menu-btn").click(function () {

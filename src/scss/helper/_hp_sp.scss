@@ -1,0 +1,7 @@
+// SPのみ表示
+.hp_sp {
+  display: none;
+  @include mq('sp') {
+    display: block;
+  }
+}

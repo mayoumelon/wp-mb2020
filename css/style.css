@@ -12,7 +12,7 @@ body {
   font-size: 0.625rem;
   color: #333333;
   font-family: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  background-image: url(/img/bg.jpg);
+  background-image: url(../img/bg.jpg);
   background-attachment: fixed;
 }
 
@@ -101,6 +101,10 @@ ol, ul {
 
 .hp_smTopSpace {
   margin-top: 30px !important;
+}
+
+.hp_sp {
+  display: none;
 }
 
 /*=======================================================
@@ -1020,7 +1024,7 @@ ol, ul {
 .fv-sm {
   width: 100%;
   height: 100%;
-  background: transparent url(/img/common/pic10.jpg) no-repeat center center/cover;
+  background: transparent url(../img/common/pic10.jpg) no-repeat center center/cover;
 }
 
 .fv-sm__inner {
@@ -1146,7 +1150,7 @@ ol, ul {
 .story-top {
   width: 100%;
   height: 100%;
-  background: transparent url(/img/story/pic1.jpg) no-repeat center center/cover;
+  background: transparent url(../img/story/pic1.jpg) no-repeat center center/cover;
 }
 
 .story-top_inner {
@@ -1229,7 +1233,7 @@ ol, ul {
 .story2 {
   width: 100%;
   height: 100%;
-  background: #000 url(/img/story/pic2.png) no-repeat center center/cover;
+  background: #000 url(../img/story/pic2.png) no-repeat center center/cover;
 }
 
 .story2_inner {
@@ -1272,7 +1276,7 @@ ol, ul {
 .story3 {
   width: 100%;
   height: 100%;
-  background: transparent url(/img/story/pic3.jpg) no-repeat center center/cover;
+  background: transparent url(../img/story/pic3.jpg) no-repeat center center/cover;
 }
 
 .story3_inner {
@@ -1315,7 +1319,7 @@ ol, ul {
 .story4 {
   width: 100%;
   height: 100%;
-  background: transparent url(/img/story/pic4.jpg) no-repeat center center/cover;
+  background: transparent url(../img/story/pic4.jpg) no-repeat center center/cover;
 }
 
 .story4_inner {
@@ -1459,7 +1463,7 @@ ol, ul {
   padding-top: 80px;
   padding-bottom: 30px;
   padding-left: 30px;
-  background: transparent url(/img/toppage/pic6.jpg) no-repeat center center/cover;
+  background: transparent url(../img/toppage/pic6.jpg) no-repeat center center/cover;
   color: #ffffff;
   position: relative;
 }
@@ -1518,7 +1522,7 @@ ol, ul {
 .fv {
   width: 100%;
   height: 100%;
-  background: transparent url(/img/toppage/pic0.jpg) no-repeat center center/cover;
+  background: transparent url(../img/toppage/pic0.jpg) no-repeat center center/cover;
 }
 
 .fv__inner {
@@ -1598,7 +1602,7 @@ ol, ul {
 }
 
 .bl_intro_box {
-  background: rgba(255, 255, 255, .4) url(/img/toppage/pic1.png) no-repeat top left/200px auto;
+  background: rgba(255, 255, 255, .4) url(../img/toppage/pic1.png) no-repeat top left/200px auto;
   padding: 30px;
   text-align: center;
 }
@@ -1637,7 +1641,7 @@ ol, ul {
   padding-bottom: 60px;
   width: 100%;
   height: 100%;
-  background: transparent url(/img/toppage/pic5.jpg) no-repeat center center/cover;
+  background: transparent url(../img/toppage/pic5.jpg) no-repeat center center/cover;
   color: #ffffff;
 }
 
@@ -1667,6 +1671,9 @@ ol, ul {
 @media screen and (max-width: 767px) {
   .hp_pc {
     display: none;
+  }
+  .hp_sp {
+    display: block;
   }
   .bl_card__row {
     -webkit-box-orient: vertical;
