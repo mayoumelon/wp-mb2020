@@ -25,45 +25,52 @@
       <div class="news__inner container wow fadeIn">
         <div class="el_lv2Heading">news</div>
         <div class="news__btn"><a class="el_btn" href="#">ニュース一覧へ</a></div>
+
+        <?php 
+        // 記事がある場合に表示
+        if ( have_posts() ) : ?>
+
         <div class="bl_cardUnit bl_cardUnit__col3">
+
+         <?php 
+          // 記事数分ループ
+          while ( have_posts() ):
+            the_post();
+            // 何番目の記事かをカウントする
+            $count = $wp_query->current_post;
+            error_log('記事番号：' . $count);
+
+            // if ( $count < 3 ) :
+         ?>
+
+        <!-- 記事ここから -->
           <div class="bl_card"><a class="bl_card_link" href="">
-              <figure class="bl_card_imgWrapper"><img src="<?php echo get_template_directory_uri() ?>/img/toppage/pic2.jpg" alt="" /></figure>
-              <div class="bl_card_body">
-                <time datetime="2019-09-30">2019.09.30</time>
-                <p>ニュースのタイトルが入ります。ニュースのタイトルが入ります。</p>
-              </div>
-            </a></div>
-          <div class="bl_card"><a class="bl_card_link" href="">
-              <figure class="bl_card_imgWrapper"><img src="<?php echo get_template_directory_uri() ?>/img/toppage/pic3.jpg" alt="" /></figure>
-              <div class="bl_card_body">
-                <time datetime="2019-09-30">2019.09.30</time>
-                <p>ニュースのタイトルが入ります。ニュースのタイトルが入ります。</p>
-              </div>
-            </a></div>
-          <div class="bl_card"><a class="bl_card_link" href="">
-              <figure class="bl_card_imgWrapper"><img src="<?php echo get_template_directory_uri() ?>/img/toppage/pic4.jpg" alt="" /></figure>
-              <div class="bl_card_body">
-                <time datetime="2019-09-30">2019.09.30</time>
-                <p>ニュースのタイトルが入ります。ニュースのタイトルが入ります。</p>
-              </div>
-            </a></div>
+            <figure class="bl_card_imgWrapper"><img src="<?php echo get_template_directory_uri() ?>/img/toppage/pic2.jpg" alt="" /></figure>
+            <div class="bl_card_body">
+              <time datetime="2019-09-30">2019.09.30</time>
+              <p>ニュースのタイトルが入ります。ニュースのタイトルが入ります。</p>
+            </div>
+          </a></div>
+        <!-- 記事ここまで -->
+ 
+         <?php 
+          endwhile;
+         ?>
+ 
         </div>
+
         <div class="bl_cardUnit bl_cardUnit__col2">
           <div class="bl_card"><a class="bl_card_link bl_card__row" href="">
-              <figure class="bl_card_imgWrapper"><img src="<?php echo get_template_directory_uri() ?>/img/toppage/pic2.jpg" alt="" /></figure>
-              <div class="bl_card_body">
-                <time datetime="2019-09-30">2019.09.30</time>
-                <p>ニュースのタイトルが入ります。ニュースのタイトルが入ります。</p>
-              </div>
-            </a></div>
-          <div class="bl_card"><a class="bl_card_link bl_card__row" href="">
-              <figure class="bl_card_imgWrapper"><img src="<?php echo get_template_directory_uri() ?>/img/toppage/pic3.jpg" alt="" /></figure>
-              <div class="bl_card_body">
-                <time datetime="2019-09-30">2019.09.30</time>
-                <p>ニュースのタイトルが入ります。ニュースのタイトルが入ります。</p>
-              </div>
-            </a></div>
+            <figure class="bl_card_imgWrapper"><img src="/img/toppage/pic2.jpg" alt="" /></figure>
+            <div class="bl_card_body">
+              <time datetime="2019-09-30">2019.09.30</time>
+              <p>ニュースのタイトルが入ります。ニュースのタイトルが入ります。</p>
+            </div>
+          </a></div>
         </div>
+                
+        <?php endif; ?>
+
       </div>
     </section>
     <!-- ニュースここまで-->
@@ -149,89 +156,9 @@
       </div>
     </section>
     <!-- キャストここまで-->
-    <!-- ここからスケジュール-->
-    <section class="schedule">
-      <div class="bl_schedule container">
-        <!-- スケジュール一覧ここから-->
-        <div class="bl_schedule_box">
-          <h2 class="el_lv2Heading wow fadeIn">schedule</h2>
-          <ul class="bl_schedule_items wow fadeIn">
-            <li class="bl_schedule_item">
-              <div class="bl_schedule_detail">
-                <p>
-                  <time datetime="2020-07-04">2020.07.04</time>
-                </p>
-                <P>
-                  <time datetime="17:00">17:00</time>開演
-                </P>
-              </div>
-              <div class="bl_schedule_detail">
-                <p>中野ZERO大ホール</p>
-              </div>
-              <div class="bl_schedule_detail">
-                <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
-              </div>
-            </li>
-            <li class="bl_schedule_item">
-              <div class="bl_schedule_detail">
-                <p>
-                  <time datetime="2020-07-05">2020.07.05</time>
-                </p>
-                <P>
-                  <time datetime="17:00">17:00</time>開演
-                </P>
-              </div>
-              <div class="bl_schedule_detail">
-                <p>中野ZERO大ホール</p>
-              </div>
-              <div class="bl_schedule_detail">
-                <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
-              </div>
-            </li>
-            <li class="bl_schedule_item">
-              <div class="bl_schedule_detail">
-                <p>
-                  <time datetime="2020-07-06">2020.07.06</time>
-                </p>
-                <P>
-                  <time datetime="17:00">17:00</time>開演
-                </P>
-              </div>
-              <div class="bl_schedule_detail">
-                <p>中野ZERO大ホール</p>
-              </div>
-              <div class="bl_schedule_detail">
-                <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
-              </div>
-            </li>
-            <li class="bl_schedule_item">
-              <div class="bl_schedule_detail">
-                <p>
-                  <time datetime="2020-07-07">2020.07.07</time>
-                </p>
-                <P>
-                  <time datetime="17:00">17:00</time>開演
-                </P>
-              </div>
-              <div class="bl_schedule_detail">
-                <p>中野ZERO大ホール</p>
-              </div>
-              <div class="bl_schedule_detail">
-                <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- スケジュール一覧ここまで-->
-        <!-- スケジュールボタンここから-->
-        <div class="bl_schedule__btn wow fadeIn">
-          <div class="bl_schedule__btn_inner"><a class="el_btn el_btn__large el_btn__brown">お問い合わせはこちら</a></div>
-          <div class="bl_schedule__btn_inner"><a class="el_btn el_btn__large">チケット予約サイトへ</a></div>
-        </div>
-        <!-- スケジュールボタンここまで-->
-      </div>
-    </section>
-    <!-- ここまでスケジュール-->
+
+    <!-- スケジュール -->
+    <?php get_template_part('template-parts/schedule'); ?>
   </main>
 
 <!--フッタ -->
