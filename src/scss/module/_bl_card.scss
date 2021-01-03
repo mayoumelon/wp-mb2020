@@ -33,6 +33,7 @@
 
   &_body {
     padding: 14px 14px 24px;
+    flex: 0 0 50%;
     time {
       @include fzrem(12);
     }

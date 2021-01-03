@@ -185,6 +185,9 @@ ol, ul {
 
 .bl_card_body {
   padding: 14px 14px 24px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
 }
 
 .bl_card_body time {
