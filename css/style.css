@@ -157,14 +157,17 @@ ol, ul {
   background-color: #ffffff;
 }
 
-.bl_card figure {
+.bl_card_imgWrapper {
   width: 100%;
   margin: 0;
 }
 
-.bl_card img {
+.bl_card_imgWrapper img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: #666666;
 }
 
 .bl_card_link {
@@ -212,6 +215,7 @@ ol, ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  height: 100%;
 }
 
 .bl_cardUnit {
