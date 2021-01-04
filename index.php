@@ -1,6 +1,7 @@
 <!--ヘッダ -->
 <?php get_header(); ?>
 
+  <!-- メインここから-->
   <main>
     <!-- イントロここから-->
     <section class="intro">
@@ -28,20 +29,19 @@
 
         <?php 
         // 記事がある場合に表示
-        if ( have_posts() ) : ?>
+        if ( have_posts() ) :
 
-         <?php 
           // 記事数分ループ
           while ( have_posts() ):
             the_post();
             // 何番目の記事かをカウントする
             $count = $wp_query->current_post + 1;
             // error_log('記事番号：' . $count);
-         ?>
 
-        <?php 
         //  ３記事目までを囲うブロック
-        if ( $count === 1 ) : ?>
+        if ( $count === 1 ) : 
+        ?>
+
           <!-- ３つ並びブロック -->
           <div class="bl_cardUnit bl_cardUnit__col3">
          <?php endif; ?>
@@ -193,6 +193,7 @@
     <!-- スケジュール -->
     <?php get_template_part('template-parts/schedule'); ?>
   </main>
+  <!-- メインここまで  -->
 
 <!--フッタ -->
 <?php get_footer(); ?>
