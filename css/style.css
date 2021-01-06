@@ -616,10 +616,7 @@ ol, ul {
 =======================================================*/
 .bl_pager {
   margin-top: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow-x: auto;
+  text-align: center;
 }
 
 .bl_pager_inner {
@@ -638,35 +635,39 @@ ol, ul {
   margin-right: 15px;
 }
 
-.bl_pager_link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.page-numbers {
+  display: inline-block;
   width: 28px;
   height: 28px;
+  line-height: 24px;
   border: 2px solid #1A1A1A;
   color: #1A1A1A;
   text-decoration: none;
   -webkit-transition: .25s;
   transition: .25s;
+  margin-left: 8px;
+  margin-right: 8px;
+  text-align: center;
 }
 
-.bl_pager_link:focus, .bl_pager_link:hover {
+.page-numbers:not(.dots):focus, .page-numbers:not(.dots):hover {
   background-color: #1A1A1A;
   color: #F4D102;
   opacity: .75;
 }
 
-.bl_pager_link.is_active {
+.page-numbers.current {
   background-color: #1A1A1A;
   color: #F4D102;
   pointer-events: none;
+}
+
+.page-numbers.dots {
+  border: none;
+  line-height: 40px;
+  min-width: 0;
+  min-width: initial;
+  width: auto;
 }
 
 /*=======================================================

@@ -3,8 +3,7 @@
 =======================================================*/
 .bl_pager {
   margin-top: 30px;
-  display: flex;
-  overflow-x: auto;
+  text-align: center;
   
   &_inner {
     display: flex;
@@ -19,29 +18,41 @@
       margin-right: 15px;
     }
   }
+}
 
-  &_link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    border: 2px solid $color-pager;
-    color: $color-pager;
-    text-decoration: none;
-    transition: .25s;
+.page-numbers {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 24px;
+  border: 2px solid $color-pager;
+  color: $color-pager;
+  text-decoration: none;
+  transition: .25s;
+  margin-left: 8px;
+  margin-right: 8px;
+  text-align: center;
 
-    &:focus,
-    &:hover {
-      background-color: $color-pager;
-      color: $color-yellow;
-      opacity: .75;
-    }
-
-    &.is_active {
-      background-color: $color-pager;
-      color: $color-yellow;
-      pointer-events: none;
-    }
+  &:not(.dots):focus,
+  &:not(.dots):hover{
+    background-color: $color-pager;
+    color: $color-yellow;
+    opacity: .75;
   }
+
+  &.current {
+    background-color: $color-pager;
+    color: $color-yellow;
+    pointer-events: none;
+  }
+  &.dots {
+    border: none;
+    line-height: 40px;
+    min-width: initial;
+    width: auto;
+  }
+  // &.next,
+  // &.prev {
+  //   font-size: 30px;
+  // }
 }

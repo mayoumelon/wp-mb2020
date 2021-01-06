@@ -3,8 +3,15 @@
 
   <!-- メインここから-->
   <main>
+    <!-- breadcrumb -->
+    <div class="bl_breadcrumb  hp_smSpace container">
+      <?php if( function_exists('bcn_display') ) {
+        bcn_display(); //BreadcrumbNavXTのパンくずを表示するための記述 
+      } ?>
+    </div><!-- /breadcrumb -->
+
     <!-- タイトル-->
-    <h2 class="el_lv2Heading">news</h2>
+    <h2 class="el_lv2Heading"><?php the_archive_title(); //一覧ページ名を表示 ?></h2>
     <!-- コンテンツここから-->
     <div class="container wow fadeIn">
 
@@ -46,14 +53,24 @@
       </div>
     <?php endif; ?>
       <!-- ニュースここまで-->
+
       <!-- ページネーションここから-->
-      <nav class="bl_pager">
-        <ul class="bl_pager_inner">
-          <li><span class="bl_pager_link is_active">1</span></li>
-          <li><a class="bl_pager_link" href="#">2</a></li>
-          <li><a class="bl_pager_link" href="#"><i class="fas fa-angle-right"></i></a></li>
-        </ul>
-      </nav>
+      <?php if (paginate_links() ) : //ページが1ページ以上あれば以下を表示 ?>
+      <div class="bl_pager">
+      <?php
+        echo
+        paginate_links(
+        array(
+        'end_size' => 1,
+        'mid_size' => 1,
+        'prev_next' => true,
+        'prev_text' => '<i class="fas fa-angle-left"></i>',
+        'next_text' => '<i class="fas fa-angle-right"></i>',
+        )
+        );
+      ?>
+      </div>
+      <?php endif; ?>
       <!-- ページネーションここまで-->
     </div>
     <!-- コンテンツここまで-->

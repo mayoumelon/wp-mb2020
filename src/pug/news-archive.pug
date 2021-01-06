@@ -23,14 +23,19 @@ block content
                 p ニュースのタイトルが入ります。ニュースのタイトルが入ります。
     // ニュースここまで
     // ページネーションここから
-    nav.bl_pager
-      ul.bl_pager_inner
-        li
-          span.bl_pager_link.is_active 1
-        li
-          a.bl_pager_link(href="#") 2
-        li
-          a.bl_pager_link(href="#")
-            i.fas.fa-angle-right
+    .bl_pager
+      span.page-numbers.current 1
+      a.page-numbers(href="#") 2
+      a.page-numbers(href="#")
+        i.fas.fa-angle-right
+    //- nav.bl_pager
+    //-   ul.bl_pager_inner
+    //-     li
+    //-       span.page-numbers.current 1
+    //-     li
+    //-       a.page-numbers(href="#") 2
+    //-     li
+    //-       a.page-numbers(href="#")
+    //-         i.fas.fa-angle-right
     // ページネーションここまで
   // コンテンツここまで
