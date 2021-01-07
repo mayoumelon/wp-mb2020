@@ -3,12 +3,12 @@
 
   <!-- メインここから-->
   <main>
-    <!-- breadcrumb -->
-    <div class="bl_breadcrumb  hp_smSpace container">
-      <?php if( function_exists('bcn_display') ) {
-        bcn_display(); //BreadcrumbNavXTのパンくずを表示するための記述 
-      } ?>
-    </div><!-- /breadcrumb -->
+    <?php if( function_exists('bcn_display') ) : ?>
+      <!-- breadcrumb -->
+      <div class="bl_breadcrumb  hp_smSpace container">
+        <?php bcn_display(); //BreadcrumbNavXTのパンくずを表示するための記述 ?>
+      </div><!-- /breadcrumb -->
+    <?php endif; ?>
 
     <!-- タイトル-->
     <h2 class="el_lv2Heading"><?php the_archive_title(); //一覧ページ名を表示 ?></h2>
@@ -29,7 +29,7 @@
       ?>
 
         <div class="bl_card">
-          <a class="bl_card_link" href="">
+          <a class="bl_card_link" href="<?php the_permalink(); //記事のリンクを表示 ?>">
             <figure class="bl_card_imgWrapper">
             <?php
               if (has_post_thumbnail() ) {
