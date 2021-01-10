@@ -489,86 +489,27 @@ ol, ul {
 }
 
 /*=======================================================
-# ページャー（大）モジュール
+# ニュース投稿モジュール
 =======================================================*/
-.bl_pageNavi_inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.bl_pageNavi_inner li {
-  width: 45%;
-}
-
-.bl_pageNavi_link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-decoration: none;
-  color: #333333;
-}
-
-.bl_pageNavi_link:hover, .bl_pageNavi_link:focus {
-  opacity: 0.8;
-}
-
-.bl_pageNavi_date {
-  font-size: 12px;
-  /*IE9以前に対応する*/
-  font-size: 12px;
-  font-size: 0.75rem;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.bl_pageNavi_ttl {
-  font-size: 14px;
-  /*IE9以前に対応する*/
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-weight: bold;
-  line-height: 1.5;
-}
-
-.bl_pageNavi .fas {
-  font-size: 32px;
-  margin-top: 10px;
-}
-
-.bl_pageNavi .fa-chevron-circle-left {
-  margin-right: 15px;
-}
-
-.bl_pageNavi .fa-chevron-circle-right {
-  margin-left: 15px;
-}
-
-/*=======================================================
-# 長いカードモジュール
-=======================================================*/
-.bl_longCard figure {
+.bl_newsPost figure {
   width: 100%;
   height: 100%;
   margin: 0;
 }
 
-.bl_longCard figure img {
+.bl_newsPost figure img {
   width: 100%;
   height: 100%;
   vertical-align: bottom;
 }
 
-.bl_longCard_heading {
+.bl_newsPost_heading {
   background-color: #333333;
   color: #ffffff;
   padding: 14px 30px 17px 30px;
 }
 
-.bl_longCard_time {
+.bl_newsPost_time {
   display: inline-block;
   font-size: 12px;
   /*IE9以前に対応する*/
@@ -577,7 +518,7 @@ ol, ul {
   margin-bottom: 10px;
 }
 
-.bl_longCard_ttl {
+.bl_newsPost_ttl {
   font-size: 26px;
   /*IE9以前に対応する*/
   font-size: 26px;
@@ -585,13 +526,13 @@ ol, ul {
   font-weight: bold;
 }
 
-.bl_longCard_body {
+.bl_newsPost_body {
   background-color: #ffffff;
   opacity: 0.85;
   padding: 30px;
 }
 
-.bl_longCard_subttl {
+.bl_newsPost h1, .bl_newsPost h2 {
   font-size: 22px;
   /*IE9以前に対応する*/
   font-size: 22px;
@@ -600,11 +541,20 @@ ol, ul {
   line-height: 1.1818;
 }
 
-.bl_longCard_txt {
+.bl_newsPost h3, .bl_newsPost h4 {
+  font-size: 22px;
+  /*IE9以前に対応する*/
+  font-size: 22px;
+  font-size: 1.375rem;
+  font-weight: bold;
+  line-height: 1.1818;
+}
+
+.bl_newsPost p {
   line-height: 1.625;
 }
 
-.bl_longCard_txt strong {
+.bl_newsPost p strong {
   font-size: 18pxpx;
   /*IE9以前に対応する*/
   font-size: 1.125pxrem;
@@ -902,6 +852,129 @@ ol, ul {
   font-size: 34px;
   font-size: 2.125rem;
   text-align: center;
+}
+
+/*=======================================================
+# ページャー（大）モジュール
+=======================================================*/
+.navigation_body {
+  font-size: 14px;
+  /*IE9以前に対応する*/
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.navigation_date {
+  font-size: 12px;
+  /*IE9以前に対応する*/
+  font-size: 12px;
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.navigation .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navigation .nav-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navigation .nav-next:hover, .navigation .nav-next:focus,
+.navigation .nav-previous:hover,
+.navigation .nav-previous:focus {
+  opacity: 0.8;
+}
+
+.navigation .nav-next a,
+.navigation .nav-previous a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigation .screen-reader-text {
+  display: none;
+}
+
+.navigation .fas {
+  font-size: 32px;
+}
+
+.navigation .fa-chevron-circle-left {
+  margin-right: 15px;
+}
+
+.navigation .fa-chevron-circle-right {
+  margin-left: 15px;
+}
+
+.bl_pageNavi_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bl_pageNavi_inner li {
+  width: 45%;
+}
+
+.bl_pageNavi_link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  color: #333333;
+}
+
+.bl_pageNavi_link:hover, .bl_pageNavi_link:focus {
+  opacity: 0.8;
+}
+
+.bl_pageNavi_date {
+  font-size: 12px;
+  /*IE9以前に対応する*/
+  font-size: 12px;
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.bl_pageNavi_ttl {
+  font-size: 14px;
+  /*IE9以前に対応する*/
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.bl_pageNavi .fas {
+  font-size: 32px;
+  margin-top: 10px;
+}
+
+.bl_pageNavi .fa-chevron-circle-left {
+  margin-right: 15px;
+}
+
+.bl_pageNavi .fa-chevron-circle-right {
+  margin-left: 15px;
 }
 
 .ly_footer {

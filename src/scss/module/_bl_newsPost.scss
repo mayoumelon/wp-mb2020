@@ -1,7 +1,7 @@
 /*=======================================================
-# 長いカードモジュール
+# ニュース投稿モジュール
 =======================================================*/
-.bl_longCard {
+.bl_newsPost {
   figure {
     width: 100%;
     height: 100%;
@@ -38,13 +38,18 @@
     padding: 30px;
   }
 
-  &_subttl {
+  h1,h2 {
+    @include fzrem(22);
+    font-weight: bold;
+    line-height: 1.1818;
+  }
+  h3,h4 {
     @include fzrem(22);
     font-weight: bold;
     line-height: 1.1818;
   }
 
-  &_txt {
+  p {
     line-height: 1.625;
 
     strong {

@@ -1,21 +1,21 @@
 mixin pageNavi(_list)
 
-  nav.bl_pageNavi
+  nav.navigation
 
-    ul.bl_pageNavi_inner
+    ul.navigation_inner
 
       each _item, _index in _list
         - var _position = _index + 1
 
-        li: a.bl_pageNavi_link(href='')
+        li: a.navigation_link(href='')
           if _position % 2 === 1
             //- 左
             i.fas.fa-chevron-circle-left
 
           //- 内容
-          .bl_pageNavi_body
-            time.bl_pageNavi_date(datetime=_item.yy+'-'+_item.mm+'-'+_item.dd) #{_item.yy}.#{_item.mm}.#{_item.dd}
-            p.bl_pageNavi_ttl #{_item.ttl}
+          .navigation_body
+            time.navigation_date(datetime=_item.yy+'-'+_item.mm+'-'+_item.dd) #{_item.yy}.#{_item.mm}.#{_item.dd}
+            p.navigation_ttl #{_item.ttl}
 
           if _position % 2 === 0
             //- 右

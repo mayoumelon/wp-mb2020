@@ -1,6 +1,61 @@
 /*=======================================================
 # ページャー（大）モジュール
 =======================================================*/
+.navigation {
+
+  
+  &_body {
+    @include fzrem(14);
+    font-weight: bold;
+    line-height: 1.5;
+  }
+  &_date {
+    @include fzrem(12);
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      
+    }
+  }
+  .nav-next,
+  .nav-previous {
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+    a {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .screen-reader-text {
+    display: none;
+  }
+  .fas {
+    font-size: 32px;
+    // margin-top: 10px;
+    // height: 100%;
+    // line-height: 32px;
+  }
+
+  .fa-chevron-circle-left {
+    margin-right: 15px;
+  }
+
+  .fa-chevron-circle-right {
+    margin-left: 15px;
+  }
+}
+
+
 .bl_pageNavi {
 
   &_inner {
