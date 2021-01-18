@@ -6,6 +6,10 @@
   overflow-x: auto;
   @include fzrem(12);
 
+  a {
+    color: inherit;
+  }
+
   &_inner {
     display: flex;
 
@@ -25,7 +29,7 @@
       margin-right: 10px;
     }
     
-    a {
+    a  {
       color: inherit;
       text-decoration: none;
       transition: opacity 0.3s ease 0s;

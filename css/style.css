@@ -119,6 +119,10 @@ ol, ul {
   font-size: 0.75rem;
 }
 
+.bl_breadcrumb a {
+  color: inherit;
+}
+
 .bl_breadcrumb_inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1311,18 +1315,17 @@ ol, ul {
   line-height: 2;
 }
 
-.story2 {
+.story-sub {
   width: 100%;
   height: 100%;
-  background: #000 url(../img/story/pic2.png) no-repeat center center/cover;
 }
 
-.story2_inner {
+.story-sub_inner {
   padding-top: 60px;
   padding-bottom: 90px;
 }
 
-.story2_msg {
+.story-sub_msg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1335,7 +1338,7 @@ ol, ul {
           flex-direction: row-reverse;
 }
 
-.story2_ttl {
+.story-sub_ttl {
   margin: auto;
   vertical-align: middle;
   font-size: 26px;
@@ -1344,7 +1347,7 @@ ol, ul {
   font-size: 1.625rem;
 }
 
-.story2_txt {
+.story-sub_txt {
   width: 50%;
   padding-right: 70px;
   font-size: 12px;
@@ -1352,6 +1355,18 @@ ol, ul {
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 2;
+}
+
+.story-sub:nth-child(even) .story-sub_msg {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.story-sub:nth-child(even) .story-sub_txt {
+  padding-right: 0;
+  padding-left: 70px;
 }
 
 .story3 {
@@ -1952,13 +1967,13 @@ ol, ul {
   .story-top_txt {
     width: 100%;
   }
-  .story2_msg {
+  .story-sub_msg {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .story2_txt {
+  .story-sub_txt {
     width: 100%;
     padding-right: 0;
   }
