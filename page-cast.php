@@ -9,206 +9,172 @@
         <?php bcn_display(); //BreadcrumbNavXTのパンくずを表示するための記述 ?>
       </div><!-- /breadcrumb -->
     <?php endif; ?>
+    
+    <?php
+      if ( have_posts() ) :
+      while ( have_posts() ) :
+      the_post();
+    ?>
 
-    <!-- タイトル-->
-    <h2 class="el_lv2Heading"><?php echo $post->post_name; //一覧ページ名を表示 ?></h2>
+    <!-- キャストここから-->
+    <section class="container">
 
-    <!-- コンテンツここから-->
-    <div class="container">
+      <!-- タイトル-->
+      <h2 class="el_lv2Heading">casts</h2>
+
       <!-- キャストメインここから-->
-      <div class="bl_castMainUnit hp_smTopSpace">
-      <?php
-        $cf_group = SCF::get('cast');
-        foreach ($cf_group as $field_name => $field_value ) :
-        ?>
+      <div class="bl_castMainUnit hp_bgGradWhite hp_smTopSpace hp_smPadTopBtm">
+        <?php
+          $i = 0;
+          $cf_group = SCF::get('casts');
+          foreach ($cf_group as $field_name => $field_value ) :
+            if ($i >= 3) break;
+            ?>
+
+         <!-- キャストトップ３ -->
         <div class="bl_castMain">
           <div class="bl_castMain_imgWrapper"><?php echo wp_get_attachment_image( $field_value['cast-image'], 'large' ); ?></div>
           <div class="bl_castMain_name">
             <p><?php echo $field_value['cast-country']; ?><br><strong><?php echo $field_value['cast-name']; ?></strong></p><small class="bl_castMain_op"><?php echo $field_value['cast-title']; ?></small>
           </div>
           <div class="bl_castMain_txt">
-            <p> <?php echo $field_value['cast-text']; ?></p>
+            <p><?php echo $field_value['cast-text']; ?></p>
           </div>
         </div>
-        <?php endforeach; ?>
+        <?php 
+          $i++;
+          endforeach; 
+        ?>
       </div>
       <!-- キャストメインここまで-->
-
-
-      <!-- キャスト（写真あり）一覧ここから-->
+      <!-- キャストその他ここから-->
       <div class="bl_castUnit">
+        <?php
+          $i = 0;
+          foreach ($cf_group as $field_name => $field_value ) :
+            if ($i >= 3) :
+          // 画像
+          $cf_sample = wp_get_attachment_image_src($field_value['cast-image'],'full');
+          $imgUrl = esc_url($cf_sample[0]);
+        ?>
         <div class="bl_cast">
-          <div class="bl_cast_imgWrapper"><img src="img/toppage/pic8.jpg" alt=""></div>
+          <div class="bl_cast_imgWrapper"><img src="<?php echo $imgUrl; ?>" alt=""></div>
           <div class="bl_cast_body">
-            <p class="bl_cast_pos">出演</p>
-            <p class="bl_cast_nm">白井さち子</p>
-            <p class="bl_cast_op">(バレエ、コンテンポラリーダンス)</p>
-            <p class="bl_cast_msg">7歳よりクラシックバレエを始める。 82年より6年間橘バレエ学校に在籍。 牧阿佐美に師事。 <br>日本女子体育短期大学舞踊コース卒。 在籍中、太田順造にパントマイムを師事。</p>
+            <p class="bl_cast_pos"><?php echo $field_value['cast-country']; ?></p>
+            <p class="bl_cast_nm"><?php echo $field_value['cast-name']; ?></p>
+            <p class="bl_cast_op"><?php echo $field_value['cast-title']; ?></p>
+            <p class="bl_cast_msg"><?php echo $field_value['cast-text']; ?></p>
           </div>
         </div>
-        <div class="bl_cast">
-          <div class="bl_cast_imgWrapper"><img src="img/toppage/pic8.jpg" alt=""></div>
-          <div class="bl_cast_body">
-            <p class="bl_cast_pos">出演</p>
-            <p class="bl_cast_nm">白井さち子</p>
-            <p class="bl_cast_op">(バレエ、コンテンポラリーダンス)</p>
-            <p class="bl_cast_msg">7歳よりクラシックバレエを始める。 82年より6年間橘バレエ学校に在籍。 牧阿佐美に師事。 <br>日本女子体育短期大学舞踊コース卒。 在籍中、太田順造にパントマイムを師事。</p>
-          </div>
-        </div>
-        <div class="bl_cast">
-          <div class="bl_cast_imgWrapper"><img src="img/toppage/pic8.jpg" alt=""></div>
-          <div class="bl_cast_body">
-            <p class="bl_cast_pos">出演</p>
-            <p class="bl_cast_nm">白井さち子</p>
-            <p class="bl_cast_op">(バレエ、コンテンポラリーダンス)</p>
-            <p class="bl_cast_msg">7歳よりクラシックバレエを始める。 82年より6年間橘バレエ学校に在籍。 牧阿佐美に師事。 <br>日本女子体育短期大学舞踊コース卒。 在籍中、太田順造にパントマイムを師事。</p>
-          </div>
-        </div>
-        <div class="bl_cast">
-          <div class="bl_cast_imgWrapper"><img src="img/toppage/pic8.jpg" alt=""></div>
-          <div class="bl_cast_body">
-            <p class="bl_cast_pos">出演</p>
-            <p class="bl_cast_nm">白井さち子</p>
-            <p class="bl_cast_op">(バレエ、コンテンポラリーダンス)</p>
-            <p class="bl_cast_msg">7歳よりクラシックバレエを始める。 82年より6年間橘バレエ学校に在籍。 牧阿佐美に師事。 <br>日本女子体育短期大学舞踊コース卒。 在籍中、太田順造にパントマイムを師事。</p>
-          </div>
-        </div>
+        <?php 
+          endif;
+          $i++;
+          endforeach; 
+        ?>
       </div>
-      <!-- キャスト（写真あり）一覧ここまで-->
-      <!-- キャスト（写真なし）一覧ここから-->
-      <div class="bl_castUnit hp_bgWhite">
-        <div class="bl_castNoImg">
-          <p class="bl_cast_pos">作・演出・振付・構成</p>
-          <p class="bl_cast_nm">小池博史</p>
-          <p class="bl_cast_op">　</p>
+      <div class="bl_castUnit">
+        <?php
+          $i = 0;
+          foreach ($cf_group as $field_name => $field_value ) :
+            error_log('カウント２:'. $i);
+            if ($i >= 3) :
+          // 画像
+          $cf_sample = wp_get_attachment_image_src($field_value['cast-image'],'full');
+          $imgUrl = esc_url($cf_sample[0]);
+        ?>
+        <div class="bl_cast">
+          <!-- <div class="bl_cast_imgWrapper"><?php //echo wp_get_attachment_image( $field_value['cast-image'], 'large' ); ?></div> -->
+          <div class="bl_cast_imgWrapper"><img src="<?php echo $imgUrl; ?>" alt=""></div>
+          <div class="bl_cast_body">
+            <p class="bl_cast_pos"><?php echo $field_value['cast-country']; ?></p>
+            <p class="bl_cast_nm"><?php echo $field_value['cast-name']; ?></p>
+            <p class="bl_cast_op"><?php echo $field_value['cast-title']; ?></p>
+            <p class="bl_cast_msg"><?php echo $field_value['cast-text']; ?></p>
+          </div>
         </div>
-        <div class="bl_castNoImg">
-          <p class="bl_cast_pos">出演</p>
-          <p class="bl_cast_nm">白井さち子</p>
-          <p class="bl_cast_op">(バレエ、コンテンポラリーダンス)</p>
-        </div>
-        <div class="bl_castNoImg">
-          <p class="bl_cast_pos">出演</p>
-          <p class="bl_cast_nm">出演 小谷野哲郎</p>
-          <p class="bl_cast_op">(バリ舞踏)</p>
-        </div>
-        <div class="bl_castNoImg">
-          <p class="bl_cast_pos">作・演出・振付・構成</p>
-          <p class="bl_cast_nm">小池博史</p>
-          <p class="bl_cast_op">　</p>
-        </div>
-        <div class="bl_castNoImg">
-          <p class="bl_cast_pos">出演</p>
-          <p class="bl_cast_nm">白井さち子</p>
-          <p class="bl_cast_op">(バレエ、コンテンポラリーダンス)</p>
-        </div>
-        <div class="bl_castNoImg">
-          <p class="bl_cast_pos">出演</p>
-          <p class="bl_cast_nm">出演 小谷野哲郎</p>
-          <p class="bl_cast_op">(バリ舞踏)</p>
-        </div>
-        <div class="bl_castNoImg">
-          <p class="bl_cast_pos">作・演出・振付・構成</p>
-          <p class="bl_cast_nm">小池博史</p>
-          <p class="bl_cast_op">　</p>
-        </div>
-        <div class="bl_castNoImg">
-          <p class="bl_cast_pos">出演</p>
-          <p class="bl_cast_nm">白井さち子</p>
-          <p class="bl_cast_op">(バレエ、コンテンポラリーダンス)</p>
-        </div>
-        <div class="bl_castNoImg">
-          <p class="bl_cast_pos">出演</p>
-          <p class="bl_cast_nm">出演 小谷野哲郎</p>
-          <p class="bl_cast_op">(バリ舞踏)</p>
-        </div>
+        <?php 
+          endif;
+          $i++;
+          endforeach; 
+        ?>
       </div>
-      <!-- キャスト（写真なし）一覧ここまで-->
-    </div>
-    <!-- コンテンツここまで-->
-    <!-- ここからスケジュール-->
-    <section class="schedule">
-      <div class="bl_schedule container">
-        <!-- スケジュール一覧ここから-->
-        <div class="bl_schedule_box">
-          <h2 class="el_lv2Heading wow fadeIn">schedule</h2>
-          <ul class="bl_schedule_items wow fadeIn">
-            <li class="bl_schedule_item">
-              <div class="bl_schedule_detail">
-                <p>
-                  <time datetime="2020-07-04">2020.07.04</time>
-                </p>
-                <P>
-                  <time datetime="17:00">17:00</time>開演
-                </P>
-              </div>
-              <div class="bl_schedule_detail">
-                <p>中野ZERO大ホール</p>
-              </div>
-              <div class="bl_schedule_detail">
-                <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
-              </div>
-            </li>
-            <li class="bl_schedule_item">
-              <div class="bl_schedule_detail">
-                <p>
-                  <time datetime="2020-07-05">2020.07.05</time>
-                </p>
-                <P>
-                  <time datetime="17:00">17:00</time>開演
-                </P>
-              </div>
-              <div class="bl_schedule_detail">
-                <p>中野ZERO大ホール</p>
-              </div>
-              <div class="bl_schedule_detail">
-                <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
-              </div>
-            </li>
-            <li class="bl_schedule_item">
-              <div class="bl_schedule_detail">
-                <p>
-                  <time datetime="2020-07-06">2020.07.06</time>
-                </p>
-                <P>
-                  <time datetime="17:00">17:00</time>開演
-                </P>
-              </div>
-              <div class="bl_schedule_detail">
-                <p>中野ZERO大ホール</p>
-              </div>
-              <div class="bl_schedule_detail">
-                <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
-              </div>
-            </li>
-            <li class="bl_schedule_item">
-              <div class="bl_schedule_detail">
-                <p>
-                  <time datetime="2020-07-07">2020.07.07</time>
-                </p>
-                <P>
-                  <time datetime="17:00">17:00</time>開演
-                </P>
-              </div>
-              <div class="bl_schedule_detail">
-                <p>中野ZERO大ホール</p>
-              </div>
-              <div class="bl_schedule_detail">
-                <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
-              </div>
-            </li>
-          </ul>
+      <!-- キャストその他ここまで-->
+    </section>
+
+    <!-- ミュージシャンここから-->
+    <section class="container">
+      <div class="hp_bgWhite hp_smPadTopBtm">
+        <!-- タイトル-->
+        <h2 class="el_lv2Heading">musician</h2>
+  
+        <div class="bl_castUnit">
+          <?php
+            $i = 0;
+            $cf_group = SCF::get('musician');
+            foreach ($cf_group as $field_name => $field_value ) :
+              // 画像
+              $cf_sample = wp_get_attachment_image_src($field_value['musician-image'],'large');
+              $imgUrl = esc_url($cf_sample[0]);
+              //debug ################################
+              ob_start();
+              var_dump($imgUrl);
+              $test = ob_get_contents();
+              ob_end_clean();
+              error_log('ログ出力テスト:'. $test); 
+              //######################################
+          ?>
+  
+          <div class="bl_cast">
+            <!-- <div class="bl_cast_imgWrapper"><?php //echo wp_get_attachment_image( $field_value['musician-image'], 'full' ); ?></div> -->
+            <div class="bl_cast_imgWrapper"><img src="<?php echo $imgUrl; ?>" alt=""></div>
+            <div class="bl_cast_body">
+              <p class="bl_cast_pos"><?php echo $field_value['musician-country']; ?></p>
+              <p class="bl_cast_nm"><?php echo $field_value['musician-name']; ?></p>
+              <p class="bl_cast_op"><?php echo $field_value['musician-title']; ?></p>
+              <p class="bl_cast_msg"><?php echo $field_value['musician-text']; ?></p>
+            </div>
+          </div>
+  
+          <?php endforeach; ?>
         </div>
-        <!-- スケジュール一覧ここまで-->
-        <!-- スケジュールボタンここから-->
-        <div class="bl_schedule__btn wow fadeIn">
-          <div class="bl_schedule__btn_inner"><a class="el_btn el_btn__large el_btn__brown">お問い合わせはこちら</a></div>
-          <div class="bl_schedule__btn_inner"><a class="el_btn el_btn__large">チケット予約サイトへ</a></div>
+      </div><!-- /.hp_bgWhite -->
+    </section>
+    <!-- ミュージシャンここまで-->
+
+    <!-- スタッフここから-->
+    <section class="container hp_smPadTopBtm">
+      <!-- タイトル-->
+      <h2 class="el_lv2Heading">staff</h2>
+
+      <div class="bl_castUnit">
+        <?php
+          $i = 0;
+          $cf_group = SCF::get('staff');
+          foreach ($cf_group as $field_name => $field_value ) :
+        ?>
+
+        <div class="bl_cast">
+          <div class="bl_cast_imgWrapper"><?php echo wp_get_attachment_image( $field_value['staff-image'], 'full' ); ?></div>
+          <div class="bl_cast_body">
+            <p class="bl_cast_pos"><?php echo $field_value['staff-country']; ?></p>
+            <p class="bl_cast_nm"><?php echo $field_value['staff-name']; ?></p>
+            <p class="bl_cast_op"><?php echo $field_value['staff-title']; ?></p>
+            <p class="bl_cast_msg"><?php echo $field_value['staff-text']; ?></p>
+          </div>
         </div>
-        <!-- スケジュールボタンここまで-->
+
+        <?php endforeach; ?>
       </div>
     </section>
-    <!-- ここまでスケジュール-->
+    <!-- スタッフここまで-->
+
+    <!-- スケジュール -->
+    <?php get_template_part('template-parts/schedule'); ?>
+
+    <?php
+      endwhile;
+      endif;
+    ?>
   </main>
   <!-- メインここまで  -->
 

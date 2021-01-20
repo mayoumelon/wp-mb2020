@@ -10,9 +10,13 @@
     img {
       width: 130px;
       height: 130px;
-      object-fit: cover; /* この一行を追加するだけ！ */
       border-radius: 50%;
+      object-fit: cover; /* この一行を追加するだけ！ */
     }
+  }
+
+  &_body {
+    flex: 0 0 65%;
   }
 
   &_pos {
@@ -21,13 +25,15 @@
   &_nm {
     @include fzrem(22);
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   &_op {
+    @include fzrem(12);
     margin-bottom: 20px;
   }
   &_msg {
     line-height: 1.5;
     text-align: left;
+    // @include fzrem(12);
   }
 }

@@ -13,8 +13,9 @@
     height: 220px;
     img {
       border-radius: 50%;
-      // width: 80%;
       height: 100%;
+      width: 220px;
+      object-fit: cover; /* この一行を追加するだけ！ */
     }
   }
 
@@ -37,10 +38,10 @@
     display: flex;
     margin-top: 14px;
     text-align: left;
-    @include fzrem(12);
+    // @include fzrem(12);
     line-height: 1.7;
     margin-bottom: 30px;
-    color: $color-gray;
+    color: $color-black;
     
   }
 }

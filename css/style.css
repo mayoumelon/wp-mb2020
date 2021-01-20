@@ -68,8 +68,8 @@ ol, ul {
 }
 
 .hp_bgGradWhite {
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(20%, transparent), color-stop(20%, rgba(255, 255, 255, .8)), to(rgba(255, 255, 255, .8)));
-  background: linear-gradient(to bottom, transparent 0%, transparent 20%, rgba(255, 255, 255, .8) 20%, rgba(255, 255, 255, .8) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(15%, transparent), color-stop(15%, rgba(255, 255, 255, .8)), to(rgba(255, 255, 255, .8)));
+  background: linear-gradient(to bottom, transparent 0%, transparent 15%, rgba(255, 255, 255, .8) 15%, rgba(255, 255, 255, .8) 100%);
   margin: 0 calc(50% - 50vw);
   padding: 0 calc(50vw - 50%);
   width: 100vw;
@@ -91,8 +91,8 @@ ol, ul {
 }
 
 .hp_smPadTopBtm {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 
 .hp_smSpace {
@@ -270,10 +270,16 @@ ol, ul {
 .bl_cast_imgWrapper img {
   width: 130px;
   height: 130px;
+  border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
   /* この一行を追加するだけ！ */
-  border-radius: 50%;
+}
+
+.bl_cast_body {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 65%;
+          flex: 0 0 65%;
 }
 
 .bl_cast_pos {
@@ -286,10 +292,14 @@ ol, ul {
   font-size: 22px;
   font-size: 1.375rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .bl_cast_op {
+  font-size: 12px;
+  /*IE9以前に対応する*/
+  font-size: 12px;
+  font-size: 0.75rem;
   margin-bottom: 20px;
 }
 
@@ -318,6 +328,10 @@ ol, ul {
 .bl_castMain_imgWrapper img {
   border-radius: 50%;
   height: 100%;
+  width: 220px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* この一行を追加するだけ！ */
 }
 
 .bl_castMain_name {
@@ -349,13 +363,9 @@ ol, ul {
   display: flex;
   margin-top: 14px;
   text-align: left;
-  font-size: 12px;
-  /*IE9以前に対応する*/
-  font-size: 12px;
-  font-size: 0.75rem;
   line-height: 1.7;
   margin-bottom: 30px;
-  color: #666666;
+  color: #333333;
 }
 
 /*=======================================================
@@ -408,7 +418,6 @@ ol, ul {
 # キャストユニットモジュール
 =======================================================*/
 .bl_castUnit {
-  margin-top: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
