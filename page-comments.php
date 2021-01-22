@@ -17,7 +17,7 @@
     ?>
     
     <!-- タイトル-->
-    <h2 class="el_lv2Heading"><?php echo $post->post_name; //一覧ページ名を表示 ?></h2>
+    <h2 class="el_lv2Heading"><?php echo $post->post_name; //スラッグを表示 ?></h2>
     <!-- コンテンツここから-->
     <div class="container">
       <!-- サブタイトル-->

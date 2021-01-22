@@ -492,7 +492,7 @@ ol, ul {
   margin: 0 auto;
 }
 
-.bl_inquiry_msg {
+.bl_inquiry > p {
   font-weight: bold;
   font-size: 18px;
   /*IE9以前に対応する*/
@@ -850,6 +850,11 @@ ol, ul {
   outline: none;
 }
 
+.el_form_submit {
+  margin-top: 30px;
+  text-align: center;
+}
+
 .el_lv2Heading {
   font-size: 43px;
   /*IE9以前に対応する*/
@@ -865,6 +870,48 @@ ol, ul {
   font-size: 34px;
   font-size: 2.125rem;
   text-align: center;
+}
+
+/*=======================================================
+# 送信ボタンモジュール
+=======================================================*/
+.el_submit {
+  display: inline-block;
+  max-width: 100%;
+  padding: 10px 30px;
+  background-color: #c63205;
+  border: 2px solid transparent;
+  color: #ffffff;
+  font-size: 14px;
+  /*IE9以前に対応する*/
+  font-size: 14px;
+  font-size: 0.875rem;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.el_submit:focus, .el_submit:hover {
+  background-color: #ce5308;
+}
+
+.el_submit.el_btn__large {
+  padding: 24px 30px;
+}
+
+.el_submit.el_btn__border {
+  border: 3px solid #c63205;
+  background-color: #ffffff;
+  color: #c63205;
+}
+
+.el_submit.el_btn__brown {
+  background-color: #603813;
+}
+
+.el_submit.el_btn__brown:focus, .el_submit.el_btn__brown:hover {
+  background-color: #874E1B;
 }
 
 /*=======================================================
@@ -1011,6 +1058,28 @@ ol, ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.nav__lists li {
+  display: inline-block;
+  margin-right: 2vw;
+  text-align: center;
+}
+
+.nav__lists li > a {
+  text-decoration: none;
+  color: #603813;
+}
+
+.nav__lists li > a > span {
+  display: block;
+  font-size: 22px;
+  /*IE9以前に対応する*/
+  font-size: 22px;
+  font-size: 1.375rem;
+  font-weight: 700;
+  padding-top: 6px;
+  text-transform: uppercase;
 }
 
 .nav__list {
@@ -1827,7 +1896,7 @@ ol, ul {
     /*IE9以前に対応する*/
     font-size: 0.875rem;
   }
-  .bl_inquiry_msg {
+  .bl_inquiry > p {
     font-size: 14px;
     /*IE9以前に対応する*/
     font-size: 0.875rem;
@@ -1887,6 +1956,9 @@ ol, ul {
     font-size: 18px;
     /*IE9以前に対応する*/
     font-size: 1.125rem;
+  }
+  .el_submit.el_btn__large {
+    padding: 16px 22px;
   }
   .header__inner {
     background-color: rgba(51, 51, 51, .7);

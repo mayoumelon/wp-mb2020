@@ -7,7 +7,7 @@
     max-width: 80%;
     margin: 0 auto;
   
-  &_msg {
+  > p {
     font-weight: bold;
     @include fzrem(18);
     line-height: 1.6666;

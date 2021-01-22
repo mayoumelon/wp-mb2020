@@ -93,3 +93,40 @@ function add_page_column($column_name, $post_id) {
 }
 add_filter( 'manage_pages_columns', 'add_page_columns_name');
 add_action( 'manage_pages_custom_column', 'add_page_column', 10, 2);
+
+
+/**
+* メニューの登録
+*
+* 参考：https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/register_nav_menus
+*/
+function my_menu_init()
+{
+register_nav_menus(
+array(
+'global' => 'ヘッダーメニュー',
+'drawer' => 'ドロワーメニュー',
+)
+);
+}
+add_action('init', 'my_menu_init');
+
+/* 投稿アーカイブを有効にしてスラッグを指定する */
+function post_has_archive( $args, $post_type ) {
+
+  if ( 'post' == $post_type ) {
+      $args['rewrite'] = true;
+      $args['has_archive'] = 'news'; // スラッグ名
+  }
+  return $args;
+
+}
+add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
+
+/**
+* カスタムメニューのタイトル属性をアンカーテキストとして出力
+*/
+function attribute_add_nav_menu($item_output, $item){
+  return preg_replace('/(<a.*?>[^<]*?)</', '$1' . "<br><span>{$item->attr_title}</span><", $item_output);
+}
+add_filter('walker_nav_menu_start_el', 'attribute_add_nav_menu', 10, 4);

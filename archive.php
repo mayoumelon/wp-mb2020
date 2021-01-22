@@ -11,7 +11,7 @@
     <?php endif; ?>
 
     <!-- タイトル-->
-    <h2 class="el_lv2Heading"><?php the_archive_title(); //一覧ページ名を表示 ?></h2>
+    <h2 class="el_lv2Heading"><?php echo get_queried_object()->slug; //アーカイブスラッグスラッグを表示 ?></h2>
     <!-- コンテンツここから-->
     <div class="container wow fadeIn">
 

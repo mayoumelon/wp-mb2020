@@ -25,14 +25,27 @@
     <div class="header__inner">
       <h1 class="header__ttl"></h1>
       <nav class="nav">
-        <ul class="nav__lists">
+
+         <?php 
+          wp_nav_menu(
+            array(
+              'depth' => 1,
+              'theme_location' => 'global', //グローバルメニューをここに表示すると指定
+              'container' => 'false',
+              'menu_class' => 'nav__lists',
+            )
+          );
+         
+         ?>
+        <!-- <ul class="nav__lists">
           <li class="nav__list -top"><a href="/">トップ</a></li>
           <li class="nav__list -news"><a href="/news-archive">ニュース</a></li>
           <li class="nav__list -story"><a href="/story">ストーリー</a></li>
           <li class="nav__list -comments"><a href="/comments">著名人コメント</a></li>
           <li class="nav__list -cast"><a href="/cast">キャスト</a></li>
           <li class="nav__list -inquiry"><a href="/inquiry">問い合わせ</a></li>
-        </ul>
+        </ul> -->
+
       </nav>
       <!-- レスポンシブmenuボタン-->
       <div class="menu-btn"><span class="menu-btn__parts -top"></span><span class="menu-btn__parts -middle"></span><span class="menu-btn__parts -bottom"></span>
