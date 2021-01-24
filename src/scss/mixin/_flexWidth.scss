@@ -12,11 +12,13 @@
     
     // 改行直前のCardは余白不要
     @if $op-col > 0 {
+      // 最初の$op-col+1番目以降は、$card-colの倍数ごとに
       &:nth-child(#{$card-col}n+#{$op-col}) {
         margin-right: 0;
       }
     } @else {
-      &:nth-child(#{$card-col}n) {
+      // $card-colの倍数ごとに
+      &:nth-child(#{$card-col}n) { 
         margin-right: 0;
       }
     }

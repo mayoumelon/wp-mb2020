@@ -1,0 +1,39 @@
+.bl_cardUnit_top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  @include mq('sp') {
+    flex-direction: column;
+  }
+
+  & > .bl_card {
+
+    @include flexWidth(3, 30px);
+    @include mq('sp') {
+      width: 100%;
+    }
+  }
+
+  & > .bl_card:nth-child(n+4) {
+    @include flexWidth(2, 30px, 3);
+    @include mq('sp') {
+      width: 100%;
+    }
+
+    .bl_card_imgWrapper {
+     height: 10vw;
+    } 
+
+    .bl_card_link {
+      flex-direction: row;
+      // height: 100%;
+  
+      @include mq('sp') {
+        flex-direction: column;
+      }
+    }
+  }
+
+}

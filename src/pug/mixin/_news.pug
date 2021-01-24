@@ -1,7 +1,7 @@
 mixin newsSection(heading)
 
   // ニュースここから
-  - var img1 = ['/img/toppage/pic2.jpg','/img/toppage/pic3.jpg','/img/toppage/pic4.jpg']
+  - var img1 = ['/img/toppage/pic2.jpg','/img/toppage/pic3.jpg','/img/toppage/pic4.jpg','/img/toppage/pic2.jpg','/img/toppage/pic3.jpg']
 
   section.news
     .news__inner.container.wow.fadeIn
@@ -11,18 +11,9 @@ mixin newsSection(heading)
         a.el_btn(href='#') ニュース一覧へ
       
       .bl_cardUnit.bl_cardUnit__col3
-        - for (var x = 0; x < 3; x++)
+        - for (var x = 0; x < 5; x++)
           .bl_card
             a.bl_card_link(href="")
-              figure.bl_card_imgWrapper
-                img(src=img1[x], alt="")
-              .bl_card_body
-                time(datetime='2019-09-30') 2019.09.30
-                p ニュースのタイトルが入ります。ニュースのタイトルが入ります。
-      .bl_cardUnit.bl_cardUnit__col2
-        - for (var x = 0; x < 2; x++)
-          .bl_card
-            a.bl_card_link.bl_card__row(href="")
               figure.bl_card_imgWrapper
                 img(src=img1[x], alt="")
               .bl_card_body

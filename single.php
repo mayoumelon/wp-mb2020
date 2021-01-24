@@ -35,6 +35,12 @@
         endif;
       ?>
     </div>
+    
+    <?php 
+      $news_ttl = 'latest news';
+      set_query_var( 'custom_news_ttl', $news_ttl ); //custom_varというグローバル変数に登録 
+      get_template_part('template-parts/news-top'); // ニュース 
+    ?>
 
     <!-- スケジュール -->
     <?php get_template_part('template-parts/schedule'); ?>

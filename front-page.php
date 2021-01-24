@@ -3,6 +3,11 @@
 
   <!-- メインここから-->
   <main>
+    <?php
+      if ( have_posts() ) :
+      while ( have_posts() ) :
+      the_post();
+    ?>
     <!-- イントロここから-->
     <section class="intro">
       <div class="intro__inner container">
@@ -21,92 +26,14 @@
       </div>
     </section>
     <!-- イントロここまで-->
-    <!-- ニュースここから-->
-    <section class="news">
-      <div class="news__inner container wow fadeIn">
-        <div class="el_lv2Heading">news</div>
-        <div class="news__btn"><a class="el_btn" href="#">ニュース一覧へ</a></div>
 
-        <?php 
-        // 記事がある場合に表示
-        if ( have_posts() ) :
 
-          // 記事数分ループ
-          while ( have_posts() ):
-            the_post();
-            // 何番目の記事かをカウントする
-            $count = $wp_query->current_post + 1;
-            // error_log('記事番号：' . $count);
+    <?php 
+      $news_ttl = 'news';
+      set_query_var( 'custom_news_ttl', $news_ttl ); //custom_varというグローバル変数に登録 
+      get_template_part('template-parts/news-top'); // ニュース 
+    ?>
 
-        //  ３記事目までを囲うブロック
-        if ( $count === 1 ) : 
-        ?>
-
-          <!-- ３つ並びブロック -->
-          <div class="bl_cardUnit bl_cardUnit__col3">
-         <?php endif; ?>
-
-         <?php if ($count <= 3 ) : ?>
-        <!-- 記事ここから -->
-          <div class="bl_card"><a class="bl_card_link" href="">
-            <figure class="bl_card_imgWrapper">
-            <?php
-              if (has_post_thumbnail() ) {
-              // アイキャッチ画像が設定されてれば大サイズで表示
-              the_post_thumbnail('large');
-              } else {
-              // なければnoimage画像をデフォルトで表示
-                echo '<img src="' . esc_url(get_template_directory_uri()) . '/img/toppage/pic2.png" alt="">';
-              }
-            ?>
-            </figure>
-            <div class="bl_card_body">
-              <time datetime="<?php the_time('c'); ?>"><?php the_time('Y/n/j'); ?></time>
-              <p><?php the_title(); //タイトルを表示 ?></p>
-            </div>
-          </a></div>
-        <!-- 記事ここまで -->
-         <?php endif; ?>
-
-         <?php 
-        //  ４記事目以降の記事を囲むdivタグ
-         if ( $count === 4 ) : ?>
-         </div>
-         <!-- ２つ並びブロック -->
-          <div class="bl_cardUnit bl_cardUnit__col2">
-         <?php endif; ?>
-
-          <?php if ($count >= 4 ) : ?>
-            <!-- 記事ここから -->
-            <div class="bl_card"><a class="bl_card_link bl_card__row" href="">
-              <figure class="bl_card_imgWrapper">
-                <?php
-                if (has_post_thumbnail() ) {
-                // アイキャッチ画像が設定されてれば大サイズで表示
-                the_post_thumbnail('large');
-                } else {
-                // なければnoimage画像をデフォルトで表示
-                  echo '<img src="' . esc_url(get_template_directory_uri()) . '/img/toppage/pic2.png" alt="">';
-                }
-                ?>              
-              </figure>
-              <div class="bl_card_body">
-                <time datetime="<?php the_time('c'); ?>"><?php the_time('Y/n/j'); ?></time>
-                <p><?php echo the_title(); //タイトルを表示 ?></p>
-              </div>
-            </a></div>
-             <!-- 記事ここまで -->
-          <?php endif; ?>
-
-         <?php 
-          endwhile;
-         ?>
-                
-        <?php endif; ?>
-
-      </div>
-    </section>
-    <!-- ニュースここまで-->
     <!-- ストーリーここから-->
     <section class="story">
       <div class="story__inner container wow fadeIn">
@@ -192,6 +119,11 @@
 
     <!-- スケジュール -->
     <?php get_template_part('template-parts/schedule'); ?>
+
+    <?php
+      endwhile;
+      endif;
+    ?>
   </main>
   <!-- メインここまで  -->
 
