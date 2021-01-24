@@ -13,7 +13,7 @@
           <!-- リードここまで-->
         </div>
         <!-- ボタン-->
-        <div class="fv__btn"><a class="el_btn el_btn__large" href="#">チケット予約へ</a></div>
+        <div class="fv__btn"><a class="el_btn el_btn__large" href="<?php echo esc_url( SCF::get( 'reserve') ); ?>">チケット予約サイトへ</a></div>
       </div>
     </div>
     <!-- ファーストビューここまで-->

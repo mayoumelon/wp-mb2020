@@ -23,13 +23,13 @@
       <h2 class="el_lv2Heading">casts</h2>
 
       <!-- キャストメインここから-->
-      <div class="bl_castMainUnit hp_bgGradWhite hp_smTopSpace hp_smPadTopBtm">
+      <div class="bl_castMainUnit hp_bgGradWhite hp_smPadTopBtm">
         <?php
           $i = 0;
           $cf_group = SCF::get('casts');
           foreach ($cf_group as $field_name => $field_value ) :
             if ($i >= 3) break;
-            ?>
+        ?>
 
          <!-- キャストトップ３ -->
         <div class="bl_castMain">
@@ -115,13 +115,6 @@
               // 画像
               $cf_sample = wp_get_attachment_image_src($field_value['musician-image'],'large');
               $imgUrl = esc_url($cf_sample[0]);
-              //debug ################################
-              ob_start();
-              var_dump($imgUrl);
-              $test = ob_get_contents();
-              ob_end_clean();
-              error_log('ログ出力テスト:'. $test); 
-              //######################################
           ?>
   
           <div class="bl_cast">

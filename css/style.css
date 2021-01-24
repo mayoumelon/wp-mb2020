@@ -163,8 +163,8 @@ ol, ul {
 
 .bl_card_imgWrapper {
   width: 100%;
-  height: 12vw;
   margin: 0;
+  height: 12vw;
 }
 
 .bl_card_imgWrapper img {
@@ -196,6 +196,7 @@ ol, ul {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 50%;
           flex: 0 0 50%;
+  height: 100%;
 }
 
 .bl_card_body time {
@@ -255,7 +256,13 @@ ol, ul {
 }
 
 .bl_cardUnit_top > .bl_card:nth-child(n+4) .bl_card_imgWrapper {
-  height: 10vw;
+  height: 9vw;
+}
+
+.bl_cardUnit_top > .bl_card:nth-child(n+4) .bl_card_imgWrapper img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .bl_cardUnit_top > .bl_card:nth-child(n+4) .bl_card_link {
@@ -406,7 +413,6 @@ ol, ul {
 # キャストユニットモジュール
 =======================================================*/
 .bl_castMainUnit {
-  margin-top: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1571,8 +1577,6 @@ ol, ul {
 # [トップ] キャスト
 =======================================================*/
 .cast {
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(30%, transparent), color-stop(30%, rgba(255, 255, 255, .8)), to(rgba(255, 255, 255, .8)));
-  background: linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(255, 255, 255, .8) 30%, rgba(255, 255, 255, .8) 100%);
   margin: 60px calc(50% - 50vw);
   padding: 0 calc(50vw - 50%);
   width: 100vw;
@@ -1883,6 +1887,9 @@ ol, ul {
   .hp_sp {
     display: block;
   }
+  .bl_card_imgWrapper {
+    height: 100%;
+  }
   .bl_card__row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1900,6 +1907,9 @@ ol, ul {
   }
   .bl_cardUnit_top > .bl_card:nth-child(n+4) {
     width: 100%;
+  }
+  .bl_cardUnit_top > .bl_card:nth-child(n+4) .bl_card_imgWrapper {
+    height: 100%;
   }
   .bl_cardUnit_top > .bl_card:nth-child(n+4) .bl_card_link {
     -webkit-box-orient: vertical;
