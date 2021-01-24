@@ -10,8 +10,11 @@
 
   &_imgWrapper {
     width: 100%;
-    height: 12vw;
     margin: 0;
+    height: 12vw;
+    @include mq('sp') {
+      height: 100%;
+    }
 
     img {
       width: 100%;
@@ -38,6 +41,7 @@
   &_body {
     padding: 14px 14px 24px;
     flex: 0 0 50%;
+    height: 100%;
     time {
       @include fzrem(12);
     }
