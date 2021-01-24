@@ -1577,15 +1577,14 @@ ol, ul {
 # [トップ] キャスト
 =======================================================*/
 .cast {
-  margin: 60px calc(50% - 50vw);
-  padding: 0 calc(50vw - 50%);
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(22%, transparent), color-stop(22%, rgba(255, 255, 255, .8)), to(rgba(255, 255, 255, .8)));
+  background: linear-gradient(to bottom, transparent 0%, transparent 22%, rgba(255, 255, 255, .8) 22%, rgba(255, 255, 255, .8) 100%);
   width: 100vw;
 }
 
 .cast__inner {
-  position: relative;
   padding-top: 60px;
-  padding-bottom: 60px;
+  position: relative;
 }
 
 .cast__items {
@@ -1657,8 +1656,10 @@ ol, ul {
 /*=======================================================
 # [トップ] コメント
 =======================================================*/
-.comments {
-  margin-top: 60px;
+.comments__inner {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .comments__lead {

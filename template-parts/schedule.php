@@ -79,7 +79,7 @@
             $get_inquiry_id = $get_inquiry_id->ID;
             $get_home_id = get_page_by_path('home');
             $get_home_id = $get_home_id->ID;
-            error_log( SCF::get( 'reserve', $get_home_id ) );
+            // error_log( SCF::get( 'reserve', $get_home_id ) );
            ?>
           <div class="bl_schedule__btn_inner"><a href="<?php echo esc_url( get_permalink( $get_inquiry_id ) );?>" class="el_btn el_btn__large el_btn__brown">お問い合わせはこちら</a></div>
           <div class="bl_schedule__btn_inner"><a href="<?php echo esc_url( SCF::get( 'reserve', $get_home_id) ); ?>" class="el_btn el_btn__large">チケット予約サイトへ</a></div>

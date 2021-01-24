@@ -76,7 +76,7 @@
         <?php
           $i = 0;
           foreach ($cf_group as $field_name => $field_value ) :
-            error_log('カウント２:'. $i);
+            // error_log('カウント２:'. $i);
             if ($i >= 3) :
           // 画像
           $cf_sample = wp_get_attachment_image_src($field_value['cast-image'],'full');

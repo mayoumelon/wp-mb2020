@@ -3,7 +3,13 @@
 =======================================================*/
 
 .comments {
-  margin-top: 60px;
+  // margin-top: 60px;
+
+  &__inner {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 
   &__lead {
     margin-top: 32px;
