@@ -38,6 +38,13 @@
     border: 3px solid $color-red;
     background-color: $color-white;
     color: $color-red;
+    &:focus,
+    &:hover {
+      // background-color: #fff;
+      // border-color: currentColor;
+      // color: #e25c00;
+      background-color: #f0e68c;
+    }
   }
 
   &.el_btn__brown {

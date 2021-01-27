@@ -24,16 +24,28 @@
     }
 
     .bl_card_imgWrapper {
-     height: 9vw;
+    //  height: 9vw;
+      padding-top: 0;
+      padding-left: 40%;
+      width: 0;
+      // height: 100%;
 
      @include mq('sp') {
       height: 100%;
     }
 
-     img {
-       height: 100%;
-       object-fit: cover;
-     }
+    img {
+      left: -50%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(50%,-50%);
+
+    }
+
+    .bl_card_body {
+      flex: 0 0 60%;
+    }
+
     } 
 
     .bl_card_link {

@@ -26,7 +26,7 @@
 
       <!-- メッセージメインここまで-->
       <!-- コメント一覧ここから-->
-      <div class="bl_commentUnit hp_smTopSpace">
+      <div class="bl_commentUnit hp_smTopSpace wow fadeIn">
         <?php
         $cf_group = SCF::get('comments');
         foreach ($cf_group as $field_name => $field_value ) :

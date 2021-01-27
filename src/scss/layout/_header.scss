@@ -11,6 +11,9 @@
     width: 100%;
     // ★固定の高さで大丈夫？paddingでの高さ調整やめちゃった
     height: 90px;
+    @include mq('sp') {
+      height: 60px;
+    }
     margin: 0 auto;
     padding: 0 4vw;
     display: flex;

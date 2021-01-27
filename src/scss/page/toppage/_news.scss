@@ -2,7 +2,7 @@
 # [トップ] ニュース
 =======================================================*/
 .news {
-  // margin-top: 60px;
+  margin-top: 60px;
   &__inner {
     position: relative;
     padding-bottom: 62px;
@@ -10,6 +10,8 @@
 
   &__btn {
     position: absolute;
+    top: 0;
+    right: 0 + 30px;
     @include mq('pc') {
       top: 0;
       right: 30px;

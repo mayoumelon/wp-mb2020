@@ -23,7 +23,7 @@
       <h2 class="el_lv2Heading">casts</h2>
 
       <!-- キャストメインここから-->
-      <div class="bl_castMainUnit hp_bgGradWhite hp_smPadTopBtm">
+      <div class="bl_castWrapper hp_bgGradWhite hp_smPadTopBtm">
         <div class="container">
           <ul class="bl_castMainUnit">
           <!-- キャストトップ３ -->
@@ -51,57 +51,34 @@
       </div>
       <!-- キャストメインここまで-->
       <!-- キャストその他ここから-->
-      <div class="bl_castUnit">
-
-        <?php
-          $i = 0;
-          foreach ($cf_group as $field_name => $field_value ) :
-            if ($i >= 3) :
-          // 画像
-          $cf_sample = wp_get_attachment_image_src($field_value['cast-image'],'full');
-          $imgUrl = esc_url($cf_sample[0]);
-        ?>
-        <div class="bl_cast">
-          <div class="bl_cast_imgWrapper"><img src="<?php echo $imgUrl; ?>" alt=""></div>
-          <div class="bl_cast_body">
-            <p class="bl_cast_pos"><?php echo $field_value['cast-country']; ?></p>
-            <p class="bl_cast_nm"><?php echo $field_value['cast-name']; ?></p>
-            <p class="bl_cast_op"><?php echo $field_value['cast-title']; ?></p>
-            <p class="bl_cast_msg"><?php echo $field_value['cast-text']; ?></p>
-          </div>
-        </div>
-        <?php 
-          endif;
-          $i++;
-          endforeach; 
-        ?>
-      </div>
-      <div class="bl_castUnit">
-        <?php
-          $i = 0;
-          foreach ($cf_group as $field_name => $field_value ) :
-            // error_log('カウント２:'. $i);
-            if ($i >= 3) :
-          // 画像
-          $cf_sample = wp_get_attachment_image_src($field_value['cast-image'],'full');
-          $imgUrl = esc_url($cf_sample[0]);
-        ?>
-        <div class="bl_cast">
-          <!-- <div class="bl_cast_imgWrapper"><?php //echo wp_get_attachment_image( $field_value['cast-image'], 'large' ); ?></div> -->
-          <div class="bl_cast_imgWrapper"><img src="<?php echo $imgUrl; ?>" alt=""></div>
-          <div class="bl_cast_body">
-            <p class="bl_cast_pos"><?php echo $field_value['cast-country']; ?></p>
-            <p class="bl_cast_nm"><?php echo $field_value['cast-name']; ?></p>
-            <p class="bl_cast_op"><?php echo $field_value['cast-title']; ?></p>
-            <p class="bl_cast_msg"><?php echo $field_value['cast-text']; ?></p>
-          </div>
-        </div>
-        <?php 
-          endif;
-          $i++;
-          endforeach; 
-        ?>
-      </div>
+      <div class="bl_castWrapper">
+        <div class="container">
+          <ul class="bl_castUnit">
+            <?php
+              $i = 0;
+              foreach ($cf_group as $field_name => $field_value ) :
+                if ($i >= 3) :
+              // 画像
+              $cf_sample = wp_get_attachment_image_src($field_value['cast-image'],'full');
+              $imgUrl = esc_url($cf_sample[0]);
+            ?>
+            <li class="bl_cast">
+              <div class="bl_cast_imgWrapper"><img src="<?php echo $imgUrl; ?>" alt=""></div>
+              <div class="bl_cast_body">
+                <p class="bl_cast_pos"><?php echo $field_value['cast-country']; ?></p>
+                <p class="bl_cast_nm"><?php echo $field_value['cast-name']; ?></p>
+                <p class="bl_cast_op"><?php echo $field_value['cast-title']; ?></p>
+                <p class="bl_cast_msg"><?php echo $field_value['cast-text']; ?></p>
+              </div>
+            </li>
+            <?php 
+              endif;
+              $i++;
+              endforeach; 
+            ?>
+          </ul>
+        </div><!-- /.container -->
+      </div><!-- /.bl_castWrapper -->
       <!-- キャストその他ここまで-->
     </section>
 
@@ -110,8 +87,7 @@
       <div class="hp_bgWhite hp_smPadTopBtm">
         <!-- タイトル-->
         <h2 class="el_lv2Heading">musician</h2>
-  
-        <div class="bl_castUnit">
+        <ul class="bl_castUnit">
           <?php
             $i = 0;
             $cf_group = SCF::get('musician');
@@ -121,7 +97,7 @@
               $imgUrl = esc_url($cf_sample[0]);
           ?>
   
-          <div class="bl_cast">
+          <li class="bl_cast">
             <!-- <div class="bl_cast_imgWrapper"><?php //echo wp_get_attachment_image( $field_value['musician-image'], 'full' ); ?></div> -->
             <div class="bl_cast_imgWrapper"><img src="<?php echo $imgUrl; ?>" alt=""></div>
             <div class="bl_cast_body">
@@ -130,10 +106,10 @@
               <p class="bl_cast_op"><?php echo $field_value['musician-title']; ?></p>
               <p class="bl_cast_msg"><?php echo $field_value['musician-text']; ?></p>
             </div>
-          </div>
+          </li>
   
           <?php endforeach; ?>
-        </div>
+        </ul>
       </div><!-- /.hp_bgWhite -->
     </section>
     <!-- ミュージシャンここまで-->
@@ -143,14 +119,14 @@
       <!-- タイトル-->
       <h2 class="el_lv2Heading">staff</h2>
 
-      <div class="bl_castUnit">
+      <ul class="bl_castUnit">
         <?php
           $i = 0;
           $cf_group = SCF::get('staff');
           foreach ($cf_group as $field_name => $field_value ) :
         ?>
 
-        <div class="bl_cast">
+        <li class="bl_cast">
           <div class="bl_cast_imgWrapper"><?php echo wp_get_attachment_image( $field_value['staff-image'], 'full' ); ?></div>
           <div class="bl_cast_body">
             <p class="bl_cast_pos"><?php echo $field_value['staff-country']; ?></p>
@@ -158,10 +134,10 @@
             <p class="bl_cast_op"><?php echo $field_value['staff-title']; ?></p>
             <p class="bl_cast_msg"><?php echo $field_value['staff-text']; ?></p>
           </div>
-        </div>
+        </li>
 
         <?php endforeach; ?>
-      </div>
+      </ul>
     </section>
     <!-- スタッフここまで-->
 
