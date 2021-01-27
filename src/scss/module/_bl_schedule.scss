@@ -15,46 +15,62 @@
 
   &_item {
     margin-top: 25px;
-    display: flex;
-    justify-content: center;
+    line-height: 1.25;
+    // display: flex;
+    // justify-content: center;
 
-    @include mq('sp') {
-      flex-direction: column;  
-    }
+    // @include mq('sp') {
+    //   flex-direction: column;  
+    // }
 
-    p {
-      @include fzrem(20);
-      font-weight: bold;
+    // p {
+    //   @include fzrem(20);
+    //   font-weight: bold;
 
-      @include mq('sp') {
-        @include fzrem(14);
-      }
+    //   @include mq('sp') {
+    //     @include fzrem(14);
+    //   }
 
-      a {
-        color: $color-black;
-        &:focus,
-        &:hover  {
-          opacity: .75;
-        }
-      }
-    }
-    p + p {
-      margin-left: 30px;
-      @include mq('sp') {
-        margin-left: 15px;
-      }
-    }
+    //   a {
+    //     color: $color-black;
+    //     &:focus,
+    //     &:hover  {
+    //       opacity: .75;
+    //     }
+    //   }
+    // }
+    // p + p {
+    //   margin-left: 30px;
+    //   @include mq('sp') {
+    //     margin-left: 15px;
+    //   }
+    // }
   }
 
   &_detail {
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
+
+    @include fzrem(20);
+      font-weight: bold;
+
+      @include mq('sp') {
+        @include fzrem(16);
+      }
     
     & + & {
       margin-left: 30px;
       @include mq('sp') {
         margin-left: 0;
         margin-top: 6px;
+      }
+    }
+
+    a {
+      color: inherit;
+      &:focus,
+      &:hover  {
+        opacity: .75;
       }
     }
   }
@@ -78,7 +94,7 @@
         margin-left: 30px;
         @include mq('sp') {
           margin-left: 0;
-          margin-top: 30px;
+          margin-top: 16px;
         }
       } 
     }

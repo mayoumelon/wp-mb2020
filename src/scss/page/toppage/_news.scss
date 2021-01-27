@@ -2,18 +2,23 @@
 # [トップ] ニュース
 =======================================================*/
 .news {
-  margin-top: 60px;
+  // margin-top: 60px;
   &__inner {
     position: relative;
+    padding-bottom: 62px;
   }
 
   &__btn {
     position: absolute;
-    // top: 50%;
-    // left: 50%;
-    top: 0;
-    right: 30px;
-    // transform: translateY(50%);
+    @include mq('pc') {
+      top: 0;
+      right: 30px;
+    }
+    @include mq('sp') {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
 }

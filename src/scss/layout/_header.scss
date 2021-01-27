@@ -34,46 +34,28 @@
   }
 
   &__lists {
-    li {
-      display: inline-block;
-      margin-right: 2vw;
-      text-align: center;
+    // li {
+    //   display: inline-block;
+    //   margin-right: 2vw;
+    //   text-align: center;
       
-      & > a {
-        text-decoration: none;
-        color: $color-brown;
-        // position: relative;
-        & > span {
-          // position: absolute;
-          // top: 50%;
-          // left: 50%;
-          // transform: translateY(-50%, -50%);
-          display: block;
-          @include fzrem(22);
-          font-weight: 700;
-          padding-top: 6px;
-          text-transform: uppercase;
-        }
-      }
-      // &:nth-child(1) > a::after {
-      //   content: 'top';
-      // }
-      // &:nth-child(2) > a::after {
-      //   content: 'news';
-      // }
-      // &:nth-child(3) > a::after {
-      //   content: 'story';
-      // }
-      // &:nth-child(4) > a::after {
-      //   content: 'contents';
-      // }
-      // &:nth-child(5) > a::after {
-      //   content: 'cast';
-      // }
-      // &:nth-child(6) > a::after {
-      //   content: 'inquiry';
-      // }
-    }
+    //   & > a {
+    //     text-decoration: none;
+    //     color: $color-brown;
+    //     // position: relative;
+    //     & > span {
+    //       // position: absolute;
+    //       // top: 50%;
+    //       // left: 50%;
+    //       // transform: translateY(-50%, -50%);
+    //       display: block;
+    //       @include fzrem(22);
+    //       font-weight: 700;
+    //       padding-top: 6px;
+    //       text-transform: uppercase;
+    //     }
+    //   }
+    // }
   }
   &__list {
     display: inline-block;
@@ -84,6 +66,17 @@
       text-decoration: none;
       color: $color-brown;
       // position: relative;
+      & > span {
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // transform: translateY(-50%, -50%);
+        display: block;
+        @include fzrem(22);
+        font-weight: 700;
+        padding-top: 6px;
+        text-transform: uppercase;
+      }
       &::after {
         // position: absolute;
         // top: 50%;
@@ -194,6 +187,7 @@
       align-items: center;
       width: 100vw;
       height: 100vh;
+
     }
     &__list {
       @include fzrem(16);
@@ -201,12 +195,21 @@
       text-align: center;
 
       & + & {
-        padding-top: 50px;
+        padding-top: 16px;
       }
-    }
-    &__link {
-      text-decoration: none;
-      color: $color-white;
+
+      a {
+        text-decoration: none;
+        color: $color-white;
+
+        & > span {
+          display: block;
+          @include fzrem(18);
+          font-weight: 700;
+          padding-top: 6px;
+          text-transform: uppercase;
+        }
+      }
     }
   }
 }

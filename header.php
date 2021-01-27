@@ -52,14 +52,24 @@
       </div>
       <!-- レスポンシブmenu-->
       <nav class="menu">
-        <ul class="menu__lists">
+        <?php 
+          wp_nav_menu(
+            array(
+              'depth' => 1,
+              'theme_location' => 'drawer', //ドロワーメニューをここに表示すると指定
+              'container' => 'false',
+              'menu_class' => 'menu__lists',
+            )
+          );
+         ?>
+        <!-- <ul class="menu__lists">
           <li class="menu__list"><a class="menu__link -top" href="/">トップ</a></li>
           <li class="menu__list"><a class="menu__link -news" href="/news-archive">ニュース</a></li>
           <li class="menu__list"><a class="menu__link -story" href="/story">ストーリー</a></li>
           <li class="menu__list"><a class="menu__link -comments" href="/comments">著名人コメント</a></li>
           <li class="menu__list"><a class="menu__link -cast" href="/cast">キャスト</a></li>
           <li class="menu__list"><a class="menu__link -inquiry" href="/inquiry">問い合わせ</a></li>
-        </ul>
+        </ul> -->
       </nav>
     </div>
     <!-- ここまでナビゲーション-->

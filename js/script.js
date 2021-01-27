@@ -1,6 +1,8 @@
+var $ = jQuery.noConflict();
+
 new WOW().init();
 
-$(function () {
+jQuery(function () {
   //ハンバーガーメニュー
   $(".menu-btn").click(function () {
     $(this).toggleClass("active");

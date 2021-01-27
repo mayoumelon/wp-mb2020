@@ -14,6 +14,9 @@
   text-align: center;
   text-decoration: none;
   transition: .25s;
+  // 以下、iPhone用
+  -webkit-appearance: none;
+  border-radius: 0;
 
   &:focus,
   &:hover {

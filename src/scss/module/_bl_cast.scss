@@ -1,8 +1,11 @@
 .bl_cast {
   @include flexWidth(2, 30px);
   margin-bottom: 30px;
-
   display: flex;
+
+  @include mq('sp') {
+    width: 100%;
+  }
 
   &_imgWrapper {
     width: 100%;
@@ -17,6 +20,9 @@
 
   &_body {
     flex: 0 0 65%;
+    @include mq('sp') {
+      width: 100%;
+    }
   }
 
   &_pos {

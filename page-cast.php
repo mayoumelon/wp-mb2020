@@ -17,38 +17,42 @@
     ?>
 
     <!-- キャストここから-->
-    <section class="container">
+    <section class="wow fadeIn">
 
       <!-- タイトル-->
       <h2 class="el_lv2Heading">casts</h2>
 
       <!-- キャストメインここから-->
       <div class="bl_castMainUnit hp_bgGradWhite hp_smPadTopBtm">
-        <?php
-          $i = 0;
-          $cf_group = SCF::get('casts');
-          foreach ($cf_group as $field_name => $field_value ) :
-            if ($i >= 3) break;
-        ?>
-
-         <!-- キャストトップ３ -->
-        <div class="bl_castMain">
-          <div class="bl_castMain_imgWrapper"><?php echo wp_get_attachment_image( $field_value['cast-image'], 'large' ); ?></div>
-          <div class="bl_castMain_name">
-            <p><?php echo $field_value['cast-country']; ?><br><strong><?php echo $field_value['cast-name']; ?></strong></p><small class="bl_castMain_op"><?php echo $field_value['cast-title']; ?></small>
-          </div>
-          <div class="bl_castMain_txt">
-            <p><?php echo $field_value['cast-text']; ?></p>
-          </div>
-        </div>
-        <?php 
-          $i++;
-          endforeach; 
-        ?>
+        <div class="container">
+          <ul class="bl_castMainUnit">
+          <!-- キャストトップ３ -->
+          <?php
+            $i = 0;
+            $cf_group = SCF::get('casts');
+            foreach ($cf_group as $field_name => $field_value ) :
+              if ($i >= 3) break;
+          ?>
+          <li class="bl_castMain">
+            <div class="bl_castMain_imgWrapper"><?php echo wp_get_attachment_image( $field_value['cast-image'], 'large' ); ?></div>
+            <div class="bl_castMain_name">
+              <p><?php echo $field_value['cast-country']; ?><br><strong><?php echo $field_value['cast-name']; ?></strong></p><small class="bl_castMain_op"><?php echo $field_value['cast-title']; ?></small>
+            </div>
+            <div class="bl_castMain_txt">
+              <p><?php echo $field_value['cast-text']; ?></p>
+            </div>
+          </li>
+          <?php 
+            $i++;
+            endforeach; 
+          ?>
+          </ul><!-- /.bl_castMainUnit -->
+        </div><!-- /.container -->
       </div>
       <!-- キャストメインここまで-->
       <!-- キャストその他ここから-->
       <div class="bl_castUnit">
+
         <?php
           $i = 0;
           foreach ($cf_group as $field_name => $field_value ) :

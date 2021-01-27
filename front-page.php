@@ -27,6 +27,16 @@
     </section>
     <!-- イントロここまで-->
 
+    <section class="youtube">
+    <div class="youtube__inner container">
+      <h2 class="section-title"></h2>
+      <div class="youtube__iframe">
+        <div class="youtube__iframe-wrap">
+          <iframe width="854" height="480" src="<?php echo SCF::get('youtube'); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div><!-- /.youtube__iframe-wrap -->
+      </div><!-- /.youtube__iframe -->
+    </div><!-- /.youtube__inner inner -->
+  </section><!-- /.youtube -->
 
     <?php 
       $news_ttl = 'news';
@@ -56,31 +66,8 @@
       <div class="comments__inner container wow fadeIn">
         <!-- タイトル-->
         <h2 class="el_lv2Heading">comments</h2>
-        <?php 
-        $get_page_id = get_page_by_path('comments');
-        $get_page_id = $get_page_id->ID;
-        ?>
-        <!-- コンテンツここから-->
-        <div class="container">
-          <!-- サブタイトル-->
-          <p class="comments__lead">舞台関係者のみならず各界著名人からコメントが届いています！</p>
-          <!-- メッセージメインここから-->
-          <div class="comments__msg hp_pc">
-            <p class="comments__msg-psn">京都佛立ミュージアム館長 <strong>長松清潤</strong></p>
-            <p class="comments__msg-txt">「文に非ず、其の義に非ず、唯だ一部の意のみ。」<br>まずこの聖句が浮かんだ。境界線に立つ人類。超越する意志。小池博史氏の心象が生み出したアバターが乱舞しながら深層意識に波紋を起こしてゆく。</p>
-            <div class="comments__btn"><a class="el_btn" href="<?php echo esc_url( get_permalink( $get_page_id ) );?>">もっと詳しく</a></div>
-          </div>
-          <div class="comments__box hp_sp">
-            <figure class="comments_imgWrapper"><img src="<?php echo get_template_directory_uri() ?>/img/toppage/pic6.jpg" alt=""></figure>
-            <div class="comments__body">
-              <p class="comments__msg-psn">京都佛立ミュージアム館長 <strong>長松清潤</strong></p>
-              <p class="comments__msg-txt">「文に非ず、其の義に非ず、唯だ一部の意のみ。」<br>まずこの聖句が浮かんだ。境界線に立つ人類。超越する意志。小池博史氏の心象が生み出したアバターが乱舞しながら深層意識に波紋を起こしてゆく。</p>
-              <div class="comments__btn"><a class="el_btn" href="<?php echo esc_url( get_permalink( $get_page_id ) );?>">もっと詳しく</a></div>
-            </div>
-          </div>
-          <!-- メッセージメインここまで-->
-        </div>
-        <!-- コンテンツここまで-->
+        <!-- コメントトップ -->
+        <?php get_template_part('template-parts/comments-top'); ?>
       </div>
     </section>
     <!-- コメントここまで-->

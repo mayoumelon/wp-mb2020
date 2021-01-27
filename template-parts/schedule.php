@@ -5,8 +5,20 @@
         <div class="bl_schedule_box">
           <h2 class="el_lv2Heading wow fadeIn">schedule</h2>
           <ul class="bl_schedule_items wow fadeIn">
+            <?php 
+              $get_page_id = get_page_by_path('home');
+              $get_page_id = $get_page_id->ID;
+              $cf_group = SCF::get('schedule', $get_page_id);
+                  foreach ($cf_group as $field_name => $field_value ) :
+            ?>
             <li class="bl_schedule_item">
-              <div class="bl_schedule_detail">
+              <span class="bl_schedule_detail"><?php echo $field_value['schedule_event']; ?></span>
+              <span class="bl_schedule_detail">
+                  <a rel="noopener noreferer" target="_blank" href="<?php echo esc_url( $field_value['schedule_link'] ); ?>">
+                    <?php echo $field_value['schedule_linktext']; ?>
+                  </a>  
+              </span>
+              <!-- <div class="bl_schedule_detail">
                 <p>
                   <time datetime="2020-07-04">2020.07.04</time>
                 </p>
@@ -16,59 +28,12 @@
               </div>
               <div class="bl_schedule_detail">
                 <p>中野ZERO大ホール</p>
-              </div>
-              <div class="bl_schedule_detail">
+              </div> -->
+              <!-- <div class="bl_schedule_detail">
                 <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
               </div>
-            </li>
-            <li class="bl_schedule_item">
-              <div class="bl_schedule_detail">
-                <p>
-                  <time datetime="2020-07-05">2020.07.05</time>
-                </p>
-                <P>
-                  <time datetime="17:00">17:00</time>開演
-                </P>
-              </div>
-              <div class="bl_schedule_detail">
-                <p>中野ZERO大ホール</p>
-              </div>
-              <div class="bl_schedule_detail">
-                <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
-              </div>
-            </li>
-            <li class="bl_schedule_item">
-              <div class="bl_schedule_detail">
-                <p>
-                  <time datetime="2020-07-06">2020.07.06</time>
-                </p>
-                <P>
-                  <time datetime="17:00">17:00</time>開演
-                </P>
-              </div>
-              <div class="bl_schedule_detail">
-                <p>中野ZERO大ホール</p>
-              </div>
-              <div class="bl_schedule_detail">
-                <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
-              </div>
-            </li>
-            <li class="bl_schedule_item">
-              <div class="bl_schedule_detail">
-                <p>
-                  <time datetime="2020-07-07">2020.07.07</time>
-                </p>
-                <P>
-                  <time datetime="17:00">17:00</time>開演
-                </P>
-              </div>
-              <div class="bl_schedule_detail">
-                <p>中野ZERO大ホール</p>
-              </div>
-              <div class="bl_schedule_detail">
-                <p><a rel="noopener noreferer" target="_blank" href="#">チケット予約受付中</a></p>
-              </div>
-            </li>
+            </li> -->
+                  <?php endforeach; ?>
           </ul>
         </div>
         <!-- スケジュール一覧ここまで-->

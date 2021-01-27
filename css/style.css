@@ -68,11 +68,8 @@ ol, ul {
 }
 
 .hp_bgGradWhite {
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(15%, transparent), color-stop(15%, rgba(255, 255, 255, .8)), to(rgba(255, 255, 255, .8)));
-  background: linear-gradient(to bottom, transparent 0%, transparent 15%, rgba(255, 255, 255, .8) 15%, rgba(255, 255, 255, .8) 100%);
-  margin: 0 calc(50% - 50vw);
-  padding: 0 calc(50vw - 50%);
-  width: 100vw;
+  background: rgba(255, 255, 255, .8);
+  margin-top: calc(2em + 100px);
 }
 
 .hp_bgWhite {
@@ -688,15 +685,10 @@ ol, ul {
 
 .bl_schedule_item {
   margin-top: 25px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  line-height: 1.25;
 }
 
-.bl_schedule_item p {
+.bl_schedule_detail {
   font-size: 20px;
   /*IE9以前に対応する*/
   font-size: 20px;
@@ -704,29 +696,16 @@ ol, ul {
   font-weight: bold;
 }
 
-.bl_schedule_item p a {
-  color: #333333;
-}
-
-.bl_schedule_item p a:focus, .bl_schedule_item p a:hover {
-  opacity: .75;
-}
-
-.bl_schedule_item p + p {
-  margin-left: 30px;
-}
-
-.bl_schedule_detail {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .bl_schedule_detail + .bl_schedule_detail {
   margin-left: 30px;
+}
+
+.bl_schedule_detail a {
+  color: inherit;
+}
+
+.bl_schedule_detail a:focus, .bl_schedule_detail a:hover {
+  opacity: .75;
 }
 
 .bl_schedule__btn {
@@ -930,6 +909,8 @@ ol, ul {
   text-decoration: none;
   -webkit-transition: .25s;
   transition: .25s;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
 .el_submit:focus, .el_submit:hover {
@@ -1100,28 +1081,6 @@ ol, ul {
           justify-content: center;
 }
 
-.nav__lists li {
-  display: inline-block;
-  margin-right: 2vw;
-  text-align: center;
-}
-
-.nav__lists li > a {
-  text-decoration: none;
-  color: #603813;
-}
-
-.nav__lists li > a > span {
-  display: block;
-  font-size: 22px;
-  /*IE9以前に対応する*/
-  font-size: 22px;
-  font-size: 1.375rem;
-  font-weight: 700;
-  padding-top: 6px;
-  text-transform: uppercase;
-}
-
 .nav__list {
   display: inline-block;
   margin-right: 2vw;
@@ -1131,6 +1090,17 @@ ol, ul {
 .nav__list > a {
   text-decoration: none;
   color: #603813;
+}
+
+.nav__list > a > span {
+  display: block;
+  font-size: 22px;
+  /*IE9以前に対応する*/
+  font-size: 22px;
+  font-size: 1.375rem;
+  font-weight: 700;
+  padding-top: 6px;
+  text-transform: uppercase;
 }
 
 .nav__list > a::after {
@@ -1350,89 +1320,6 @@ ol, ul {
   width: 100%;
 }
 
-.story-top {
-  width: 100%;
-  height: 100%;
-  background: transparent url(../img/story/pic1.jpg) no-repeat center center/cover;
-}
-
-.story-top_inner {
-  padding-top: 60px;
-  padding-bottom: 90px;
-}
-
-.story-top_ttl {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.story-top_main {
-  width: 55%;
-}
-
-.story-top_sub {
-  width: 30%;
-}
-
-.story-top_sub img {
-  width: 100%;
-}
-
-.story-top_date {
-  text-align: center;
-  width: 40%;
-}
-
-.story-top_lead {
-  width: 36%;
-}
-
-.story-top_lead p {
-  font-size: 14px;
-  /*IE9以前に対応する*/
-  font-size: 14px;
-  font-size: 0.875rem;
-  color: #ffffff;
-  line-height: 1.5714;
-}
-
-.story-top_btn {
-  margin-top: 35px;
-  text-align: right;
-}
-
-.story-top_msg {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.story-top_ttl {
-  margin: auto;
-  vertical-align: middle;
-  font-size: 26px;
-  /*IE9以前に対応する*/
-  font-size: 26px;
-  font-size: 1.625rem;
-}
-
-.story-top_txt {
-  width: 50%;
-  padding-left: 70px;
-  font-size: 12px;
-  /*IE9以前に対応する*/
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 2;
-}
-
 .story-sub {
   width: 100%;
   height: 100%;
@@ -1487,31 +1374,24 @@ ol, ul {
   padding-left: 70px;
 }
 
-.story3 {
+.story-top {
   width: 100%;
   height: 100%;
-  background: transparent url(../img/story/pic3.jpg) no-repeat center center/cover;
+  background: transparent url(../img/story/pic1.jpg) no-repeat center center/cover;
 }
 
-.story3_inner {
+.story-top_inner {
   padding-top: 60px;
   padding-bottom: 90px;
 }
 
-.story3_msg {
+.story-top_ttl {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.story3_ttl {
   margin: auto;
   vertical-align: middle;
   font-size: 26px;
@@ -1520,52 +1400,53 @@ ol, ul {
   font-size: 1.625rem;
 }
 
-.story3_txt {
+.story-top_main {
+  width: 55%;
+}
+
+.story-top_sub {
+  width: 30%;
+}
+
+.story-top_sub img {
+  width: 100%;
+}
+
+.story-top_date {
+  text-align: center;
+  width: 40%;
+}
+
+.story-top_lead {
+  width: 36%;
+}
+
+.story-top_lead p {
+  font-size: 14px;
+  /*IE9以前に対応する*/
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #ffffff;
+  line-height: 1.5714;
+}
+
+.story-top_btn {
+  margin-top: 35px;
+  text-align: right;
+}
+
+.story-top_msg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.story-top_txt {
   width: 50%;
   padding-left: 70px;
-  font-size: 12px;
-  /*IE9以前に対応する*/
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 2;
-}
-
-.story4 {
-  width: 100%;
-  height: 100%;
-  background: transparent url(../img/story/pic4.jpg) no-repeat center center/cover;
-}
-
-.story4_inner {
-  padding-top: 60px;
-  padding-bottom: 90px;
-}
-
-.story4_msg {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-}
-
-.story4_ttl {
-  margin: auto;
-  vertical-align: middle;
-  font-size: 26px;
-  /*IE9以前に対応する*/
-  font-size: 26px;
-  font-size: 1.625rem;
-}
-
-.story4_txt {
-  width: 50%;
-  padding-right: 70px;
   font-size: 12px;
   /*IE9以前に対応する*/
   font-size: 12px;
@@ -1823,18 +1704,13 @@ ol, ul {
 /*=======================================================
 # [トップ] ニュース
 =======================================================*/
-.news {
-  margin-top: 60px;
-}
-
 .news__inner {
   position: relative;
+  padding-bottom: 62px;
 }
 
 .news__btn {
   position: absolute;
-  top: 0;
-  right: 30px;
 }
 
 /*=======================================================
@@ -1881,7 +1757,39 @@ ol, ul {
   margin-top: 14px;
 }
 
+/*-----------------
+YouTube
+-----------------*/
+.youtube {
+  /* background-color: #EFEFEF; */
+  padding: 0px 0 60px;
+}
+
+.youtube__iframe {
+  margin: 60px auto 0;
+  width: 800px;
+  max-width: 100%;
+}
+
+.youtube__iframe-wrap {
+  width: 100%;
+  padding-top: 56.20609%;
+  position: relative;
+  overflow: hidden;
+}
+
+.youtube__iframe-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @media screen and (max-width: 767px) {
+  .hp_bgGradWhite {
+    background: rgba(255, 255, 255, .8);
+  }
   .hp_pc {
     display: none;
   }
@@ -1927,6 +1835,12 @@ ol, ul {
   .bl_cardUnit > .bl_card {
     width: 100%;
   }
+  .bl_cast {
+    width: 100%;
+  }
+  .bl_cast_body {
+    width: 100%;
+  }
   .bl_castMain {
     width: 100%;
   }
@@ -1961,19 +1875,10 @@ ol, ul {
     /*IE9以前に対応する*/
     font-size: 0.875rem;
   }
-  .bl_schedule_item {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .bl_schedule_item p {
-    font-size: 14px;
+  .bl_schedule_detail {
+    font-size: 16px;
     /*IE9以前に対応する*/
-    font-size: 0.875rem;
-  }
-  .bl_schedule_item p + p {
-    margin-left: 15px;
+    font-size: 1rem;
   }
   .bl_schedule_detail + .bl_schedule_detail {
     margin-left: 0;
@@ -1987,7 +1892,7 @@ ol, ul {
   }
   .bl_schedule__btn_inner + .bl_schedule__btn_inner {
     margin-left: 0;
-    margin-top: 30px;
+    margin-top: 16px;
   }
   .el_btn.el_btn__large {
     padding: 16px 22px;
@@ -2074,11 +1979,20 @@ ol, ul {
     text-align: center;
   }
   .menu__list + .menu__list {
-    padding-top: 50px;
+    padding-top: 16px;
   }
-  .menu__link {
+  .menu__list a {
     text-decoration: none;
     color: #ffffff;
+  }
+  .menu__list a > span {
+    display: block;
+    font-size: 18px;
+    /*IE9以前に対応する*/
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding-top: 6px;
+    text-transform: uppercase;
   }
   .fv-sm__date {
     width: 100%;
@@ -2086,6 +2000,33 @@ ol, ul {
   .fv-sm__lead {
     width: 100%;
     margin-top: 30px;
+  }
+  .story-sub_msg {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .story-sub_ttl {
+    font-size: 20px;
+    /*IE9以前に対応する*/
+    font-size: 1.25rem;
+  }
+  .story-sub_txt {
+    width: 100%;
+    padding-right: 0;
+    margin-top: 16px;
+  }
+  .story-sub:nth-child(even) .story-sub_msg {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .story-top_ttl {
+    font-size: 20px;
+    /*IE9以前に対応する*/
+    font-size: 1.25rem;
   }
   .story-top_date {
     width: 100%;
@@ -2104,39 +2045,6 @@ ol, ul {
     padding-left: 0;
     width: 100%;
     margin-top: 16px;
-  }
-  .story-top_txt {
-    width: 100%;
-  }
-  .story-sub_msg {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .story-sub_txt {
-    width: 100%;
-    padding-right: 0;
-  }
-  .story3_msg {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .story3_txt {
-    width: 100%;
-    padding-left: 0;
-  }
-  .story4_msg {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .story4_txt {
-    width: 100%;
-    padding-right: 0;
   }
   .cast {
     background: rgba(255, 255, 255, .8);
@@ -2172,11 +2080,27 @@ ol, ul {
   .bl_intro_box {
     background-size: 120px auto;
   }
+  .news__btn {
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
   .story__txt {
     width: 100%;
   }
   .story__btn {
     text-align: center;
+  }
+  .youtube__iframe {
+    margin-top: 60px;
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  .news__btn {
+    top: 0;
+    right: 30px;
   }
 }
 
