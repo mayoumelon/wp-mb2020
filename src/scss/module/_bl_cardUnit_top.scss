@@ -9,7 +9,6 @@
   }
 
   & > .bl_card {
-
     @include flexWidth(3, 30px);
     @include mq('sp') {
       width: 100%;
@@ -17,6 +16,8 @@
   }
 
   & > .bl_card:nth-child(n+4) {
+    display: flex;
+    // flex: 1 1 auto;
     @include flexWidth(2, 30px, 3);
     // height: 100px;
     @include mq('sp') {
@@ -27,27 +28,31 @@
     //  height: 9vw;
       padding-top: 0;
       padding-left: 40%;
-      width: 0;
-      // height: 100%;
-
-     @include mq('sp') {
+      // width: auto;
       height: 100%;
-    }
+      // flex-grow: 1;
 
-    img {
-      left: -50%;
-      height: 100%;
-      object-fit: cover;
-      transform: translate(50%,-50%);
-
+      @include mq('sp') {
+        height: 100%;
+      }
+      img {
+        top: 0;
+        left: -50%;
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+        transform: translateX(50%);
+      }
     }
 
     .bl_card_body {
+      // background-color: $color-black;
       flex: 0 0 60%;
-    }
 
+      // width: 60%;
+      // flex-grow: 1;
     } 
-
+  
     .bl_card_link {
       flex-direction: row;
       // height: 100%;
@@ -57,5 +62,4 @@
       }
     }
   }
-
 }
