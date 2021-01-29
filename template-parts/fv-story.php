@@ -2,8 +2,8 @@
 <div class="story-top hp_clrWhite">
       <div class="story-top_inner container wow fadeIn">
         <div class="story-top_ttl">
-          <h1 class="story-top_main"><img src="<?php echo get_template_directory_uri() ?>/img/toppage/text1.png" alt=""></h1>
-          <div class="story-top_sub"><img src="<?php echo get_template_directory_uri() ?>/img/toppage/text2.png" alt=""></div>
+          <h1 class="story-top_main"><img src="<?php echo get_template_directory_uri() ?>/img/toppage/text1.png" alt="完全版マハーバーラタ"></h1>
+          <div class="story-top_sub"><img src="<?php echo get_template_directory_uri() ?>/img/toppage/text2.png" alt="2020年7月4日〜7日"></div>
         </div>
         <div class="story-top_btn"><a class="el_btn" href="#">チケット予約サイトへ</a></div>
 

@@ -252,18 +252,16 @@ ol, ul {
 .bl_cardUnit_top > .bl_card:nth-child(n+4) .bl_card_imgWrapper {
   padding-top: 0;
   padding-left: 40%;
-  height: 100%;
 }
 
 .bl_cardUnit_top > .bl_card:nth-child(n+4) .bl_card_imgWrapper img {
   top: 0;
   left: -50%;
   width: auto;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transform: translateX(50%);
-          transform: translateX(50%);
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
 }
 
 .bl_cardUnit_top > .bl_card:nth-child(n+4) .bl_card_body {
@@ -1190,6 +1188,10 @@ ol, ul {
           transform: translateX(0);
 }
 
+.err__inner {
+  padding: 120px 0 200px;
+}
+
 /*=======================================================
 # [トップ] ファーストビュー
 =======================================================*/
@@ -1807,8 +1809,23 @@ YouTube
   }
   .bl_cardUnit_top > .bl_card:nth-child(n+4) {
     width: 100%;
+    display: block;
   }
   .bl_cardUnit_top > .bl_card:nth-child(n+4) .bl_card_imgWrapper {
+    padding-top: 54.69799%;
+    padding-left: 0;
+  }
+  .bl_cardUnit_top > .bl_card:nth-child(n+4) .bl_card_imgWrapper img {
+    top: 50%;
+    left: auto;
+    width: 100%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  .bl_cardUnit_top > .bl_card:nth-child(n+4) .bl_card_body {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
     height: 100%;
   }
   .bl_cardUnit_top > .bl_card:nth-child(n+4) .bl_card_link {
@@ -1816,6 +1833,7 @@ YouTube
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 100%;
   }
   .bl_cardUnit {
     -webkit-box-orient: vertical;
@@ -2080,6 +2098,8 @@ YouTube
     background-size: 120px auto;
   }
   .news__btn {
+    top: auto;
+    right: auto;
     bottom: 0;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -2093,13 +2113,6 @@ YouTube
   }
   .youtube__iframe {
     margin-top: 60px;
-  }
-}
-
-@media screen and (min-width: 1180px) {
-  .news__btn {
-    top: 0;
-    right: 30px;
   }
 }
 

@@ -3,8 +3,8 @@
 <head></head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>タイトル</title>
-<meta name="description" content="">
+<title>【模写】完全版マハーバーラタ</title>
+<meta name="description" content="【模写】完全版マハーバーラタ">
 <!-- ここからOGP-->
 <meta propaty="og:url" content=" ページの URL">
 <meta propaty="og:type" content=" ページの 種類">

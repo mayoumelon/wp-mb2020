@@ -12,11 +12,9 @@
     position: absolute;
     top: 0;
     right: 0 + 30px;
-    @include mq('pc') {
-      top: 0;
-      right: 30px;
-    }
     @include mq('sp') {
+      top: auto;
+      right: auto;
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);

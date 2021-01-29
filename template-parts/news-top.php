@@ -31,7 +31,7 @@
               the_post_thumbnail('large');
               } else {
               // なければnoimage画像をデフォルトで表示
-                echo '<img src="' . esc_url(get_template_directory_uri()) . '/img/toppage/pic2.png" alt="">';
+                echo '<img src="' . esc_url(get_template_directory_uri()) . '/img/toppage/pic2.png" alt="noimage">';
               }
             ?>
             </figure>
