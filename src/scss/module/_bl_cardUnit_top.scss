@@ -29,12 +29,13 @@
         padding-top: 0;
         padding-left: 40%;
       img {
-        top: 0;
-        left: -50%;
-        width: auto;
-        // height: 100%;
-        object-fit: cover;
-        transform: translate(50%,50%);
+        // position: absolute;
+        // top: 0;
+        // left: -50%;
+        // width: auto;
+        // // height: 100%;
+        // object-fit: cover;
+        // transform: translate(50%,50%);
       }
 
       @include mq('sp') {

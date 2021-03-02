@@ -168,9 +168,12 @@ ol, ul {
 .bl_card_imgWrapper img {
   position: absolute;
   top: 50%;
-  width: 100%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  left: 50%;
+  height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -o-object-fit: cover;
+     object-fit: cover;
   background-color: #666666;
 }
 
@@ -252,16 +255,6 @@ ol, ul {
 .bl_cardUnit_top > .bl_card:nth-child(n+4) .bl_card_imgWrapper {
   padding-top: 0;
   padding-left: 40%;
-}
-
-.bl_cardUnit_top > .bl_card:nth-child(n+4) .bl_card_imgWrapper img {
-  top: 0;
-  left: -50%;
-  width: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-transform: translate(50%, 50%);
-          transform: translate(50%, 50%);
 }
 
 .bl_cardUnit_top > .bl_card:nth-child(n+4) .bl_card_body {
